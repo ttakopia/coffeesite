@@ -1,0 +1,22 @@
+<%= provide(:title, '@art.title') %>
+<div class="cell">
+
+<table>
+  <thead>
+    <tr>
+      <th width="100">title</th>
+      <th width="100">content</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @art.each do |art| %>
+  		<tr>
+  			<td><%= art.title %></td>
+  			<td><%= art.content %></td>
+  		</tr>
+  <% end %>
+  </tbody>
+</table>
+
+</div>
