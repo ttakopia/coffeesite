@@ -37,7 +37,15 @@
 
       <%= f.label :images %>
       <%= f.file_field :images, multiple: true %>
-      
+
+      <%= f.label :latitude %>
+      <%= f.text_field :latitude %>
+
+      <%= f.label :longitude %>
+      <%= f.text_field :longitude %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
 
       <%= f.submit "Create new article", class: "btn btn-primary" %>
     <% end %>

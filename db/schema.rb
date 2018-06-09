@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180529034444) do
+ActiveRecord::Schema.define(version: 20180609090641) do
 
   create_table "arts", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20180529034444) do
     t.string "how"
     t.string "mapname"
     t.string "images"
+    t.string "description"
+    t.float "latitude"
+    t.float "longitude"
   end
 
 end

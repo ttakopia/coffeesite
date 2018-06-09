@@ -5,6 +5,11 @@ class ArtsController < ApplicationController
 
   def show
   	@art = Art.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@art) do |art, marker|
+    marker.lat art.latitude
+    marker.lng art.longitude
+    marker.infowindow art.description
+end
   end
 
   def new
@@ -23,7 +28,7 @@ class ArtsController < ApplicationController
 private
 	def art_params
 		params.require(:art).permit(:name,:content,:storename,
-                :address,:tel,:web,:time,:day,:area,:how,:mapname, {images: []})
+                :address,:tel,:web,:time,:day,:area,:how,:mapname, {images: []},:latitude,:longitude,:description)
 	end
 end
 
