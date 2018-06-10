@@ -33,10 +33,10 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.bxslider02').bxSlider({
   pager:false,
-  minSlides: 4,//１スライドに表示するサムネイルの数
-  maxSlides: 5,//１スライドに表示するサムネイルの最大数
+  minSlides: 6,//１スライドに表示するサムネイルの数
+  maxSlides: 6,//１スライドに表示するサムネイルの最大数
   slideWidth: 180,//サムネイルの横幅（単位はpx）
-  slideMargin: 10,//サムネイル間の余白（単位はpx）
+  slideMargin: 10//サムネイル間の余白（単位はpx）
       });
 });
 

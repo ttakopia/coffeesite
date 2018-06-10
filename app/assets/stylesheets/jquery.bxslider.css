@@ -4,7 +4,6 @@
 ===================================*/
 .bx-wrapper {
   position: relative;
-  margin-bottom: 60px;
   padding: 0;
   *zoom: 1;
   -ms-touch-action: pan-y;
@@ -18,7 +17,7 @@
   margin: 0;
   padding: 0;
   /*fix flickering when used background-image instead of <img> (on Chrome)*/
-  -webkit-perspective: 1000;
+  -webkit-perspective: 1100;
 }
 ul.bxslider {
   list-style: none;
@@ -178,6 +177,6 @@ ul.bxslider {
   padding: 10px;
 }
 
-.bxslider02 {
-  margin-right: -10px;
+ul.bxslider02 {
+  margin-left: 0.3rem;
 }

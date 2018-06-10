@@ -1,94 +1,85 @@
 <%= provide(:title, '@art.title') %>
 
-<div class="cell"><h2>Information</h2></div>
+<div class="cell"><h1 class="maint">Information</h1></div>
 
 <div class="cell large-8">
 <!-- メインスライダー -->	
+<div class="cell">
 <ul class="bxslider">
   <li><img src="<%= @art.images[0].url %>" /></li>
   <li><img src="<%= @art.images[1].url %>" /></li>
   <li><img src="<%= @art.images[2].url %>" /></li>
   <li><img src="<%= @art.images[3].url %>" /></li>
+  <li><img src="<%= @art.images[4].url %>" /></li>
+  <li><img src="<%= @art.images[5].url %>" /></li>
 </ul>
 
 <ul id="bx-pager" class="bxslider02">
-                <li><a data-slide-index="0" href=""><img src="<%= @art.images[0].url %>" alt="thumb01" /></a></li>
-                <li><a data-slide-index="1" href=""><img src="<%= @art.images[1].url %>" alt="thumb02" /></a></li>
-                <li><a data-slide-index="2" href=""><img src="<%= @art.images[2].url %>" alt="thumb03" /></a></li>
-                <li><a data-slide-index="3" href=""><img src="<%= @art.images[3].url %>" alt="thumb04" /></a></li>
+                <li><a data-slide-index="0" href=""><img src="<%= @art.images[0].url %>" alt="thumb00" /></a></li>
+                <li><a data-slide-index="1" href=""><img src="<%= @art.images[1].url %>" alt="thumb01" /></a></li>
+                <li><a data-slide-index="2" href=""><img src="<%= @art.images[2].url %>" alt="thumb02" /></a></li>
+                <li><a data-slide-index="3" href=""><img src="<%= @art.images[3].url %>" alt="thumb03" /></a></li>
+                <li><a data-slide-index="4" href=""><img src="<%= @art.images[4].url %>" alt="thumb04" /></a></li>
+                <li><a data-slide-index="5" href=""><img src="<%= @art.images[5].url %>" alt="thumb05" /></a></li>
             </ul>
         <p id="PrevIcon"></p>
         <p id="NextIcon"></p>
 
 
+</div>
 <!-- サムネイル -->	
 
 <!-- end of large-8 -->	
 </div>
 
 <div class="cell large-4">
-<table class="hover this">
+<table class="unstriped this">
 	<tbody>
 		<tr>
 			<td>店舗名</td>
-			<td><%= @art.storename %></td>
+			<th><%= @art.storename %></th>
 		</tr>
 		<tr>
 			<td>住所</td>
-			<td><%= @art.address %></td>
+			<th><%= @art.address %></th>
 		</tr>
 		<tr>
 			<td>TEL</td>
-			<td><%= @art.tel %></td>
+			<th><%= @art.tel %></th>
 		</tr>
 		<tr>
 			<td>WEB</td>
-			<td><%= @art.web %></td>
+			<th><%= @art.web %></th>
 		</tr>
 		<tr>
 			<td>営業時間</td>
-			<td><%= @art.time %></td>
+			<th><%= @art.time %></th>
 		</tr>
 		<tr>
 			<td>定休日</td>
-			<td><%= @art.day %></td>
+			<th><%= @art.day %></th>
 		</tr>
 		<tr>
 			<td>エリア</td>
-			<td><%= @art.area %></td>
+			<th><%= @art.area %></th>
 		</tr>
 		<tr>
 			<td>抽出方法</td>
-			<td><%= @art.how %></td>
+			<th><%= @art.how %></th>
 		</tr>
 	</tbody>
 </table>
 </div>
 
 <div class="cell">
-	<div><h1>Introduction</h1></div>
+	<div><h1 class="maint">Introduction</h1></div>
 	<div><%= @art.content %></div>
 </div>
 
 <div class="cell">
-	<div><h1>Access Map</h1></div>
-	<p>
-  <strong>Description:</strong>
-  <%= @art.description %>
-</p>
+	<div><h1 class="maint">Access Map</h1></div>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @art.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @art.longitude %>
-</p>
-
-
-	<div id="map" style="width: 800px; height: 400px;"></div>
+	<div id="map" style="width: auto; height: 400px;"></div>
 
 <script>
   handler = Gmaps.build('Google');
