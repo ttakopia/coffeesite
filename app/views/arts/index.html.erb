@@ -1,22 +1,15 @@
 <%= provide(:title, '@art.title') %>
+
+<div class="grid-x grid-margin-x small-up-2 medium-up-4 large-up-4">
+<% @art.each do |art| %>
 <div class="cell">
-
-<table>
-  <thead>
-    <tr>
-      <th width="100">title</th>
-      <th width="100">content</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @art.each do |art| %>
-  		<tr>
-  			<td><%= art.title %></td>
-  			<td><%= art.content %></td>
-  		</tr>
+<div class="card">
+<%= link_to 's', art_path(art) %>
+  <%= image_tag art.images[0].url %>
+  <div class="card-section">
+  <%= art.storename %>
+  </div>
+  </div>
+  </div>
   <% end %>
-  </tbody>
-</table>
-
 </div>

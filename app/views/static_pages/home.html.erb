@@ -1,10 +1,18 @@
 
-  <%= render 'static_pages/orbit' %>
-
-<div class="grid-x grid-margin-x">
-
-<div class="cell large-8">
 <div class="grid-x grid-margin-x small-up-2 medium-up-4 large-up-4">
+
+<% @art.each do |art| %>
+<div class="cell">
+<a href=""></a>
+<div class="card">
+  <%= link_to image_tag art.images[0].url %>
+  <div class="card-section">
+  <%= art.storename %>
+  </div>
+  </div>
+  </div>
+  <% end %>
+
    <div class="cell">
    	<div class="card">
 	  <img src="assets/one.jpg">
@@ -69,12 +77,4 @@
 	  </div>
 	</div>
    </div>
-</div>
-</div>
-
-<div class="cell large-4">
-		<div class="cell">サイドバー</div>
-	</div>
-</div>
-
 </div>

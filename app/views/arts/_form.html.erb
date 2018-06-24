@@ -1,0 +1,45 @@
+  <%= form_for(@art) do |f| %>
+  <div class="cell"><h2 class="maint">Information</h2></div>
+
+      <%= f.label :店舗名 %>
+      <%= f.text_field :storename %>
+
+      <%= f.label :住所 %>
+      <%= f.text_field :address %>
+
+      <%= f.label :TEL %>
+      <%= f.text_field :tel %>
+
+      <%= f.label :web %>
+      <%= f.text_field :web %>
+
+      <%= f.label :営業時間 %>
+      <%= f.text_field :time %>
+
+      <%= f.label :定休日 %>
+      <%= f.text_field :day %>
+
+      <%= f.label :エリア %>
+      <%= f.text_field :area %>
+
+      <%= f.label :抽出方法 %>
+      <%= f.text_field :how %>
+
+      <div class="cell">イントロダクション</div>
+
+      <%= f.label :内容 %>
+      <%= f.text_field :content %>
+
+       <div class="cell">マップ</div>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+
+      <%= f.label :images %>
+      <%= f.file_field :images, multiple: true %>
+
+  <div class="cell"><h2 class="maint">Interview</h2></div>
+
+
+      <%= f.submit "Create new article", class: "btn btn-primary" %>
+    <% end %>

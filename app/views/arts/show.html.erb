@@ -1,94 +1,55 @@
 <%= provide(:title, '@art.title') %>
 
-<div class="cell"><h1 class="maint">Information</h1></div>
+<div class="cell pagetitle">
+<h2><%= @art.storename %></h2>
+</div>
 
+<div>
+<ul class="tabs" data-tabs id="example-tabs">
+      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Information</a></li>
+      <li class="tabs-title"><a href="#panel2">Interview</a></li>
+      <li class="tabs-title"><a href="#panel3">News</a></li>
+      <li class="tabs-title"><a href="#panel4">Coupon</a></li>
+    </ul>
+</div>
+
+<div class="tabs-content" data-tabs-content="example-tabs">
+<div class="tabs-panel is-active" id="panel1">
+
+<div class="cell"><h2 class="maint">Information</h2></div>
+
+<div class="grid-x">
 <div class="cell large-8">
 <!-- メインスライダー -->	
-<div class="cell">
-<ul class="bxslider">
-  <li><img src="<%= @art.images[0].url %>" /></li>
-  <li><img src="<%= @art.images[1].url %>" /></li>
-  <li><img src="<%= @art.images[2].url %>" /></li>
-  <li><img src="<%= @art.images[3].url %>" /></li>
-  <li><img src="<%= @art.images[4].url %>" /></li>
-  <li><img src="<%= @art.images[5].url %>" /></li>
-</ul>
-
-<ul id="bx-pager" class="bxslider02">
-                <li><a data-slide-index="0" href=""><img src="<%= @art.images[0].url %>" alt="thumb00" /></a></li>
-                <li><a data-slide-index="1" href=""><img src="<%= @art.images[1].url %>" alt="thumb01" /></a></li>
-                <li><a data-slide-index="2" href=""><img src="<%= @art.images[2].url %>" alt="thumb02" /></a></li>
-                <li><a data-slide-index="3" href=""><img src="<%= @art.images[3].url %>" alt="thumb03" /></a></li>
-                <li><a data-slide-index="4" href=""><img src="<%= @art.images[4].url %>" alt="thumb04" /></a></li>
-                <li><a data-slide-index="5" href=""><img src="<%= @art.images[5].url %>" alt="thumb05" /></a></li>
-            </ul>
-        <p id="PrevIcon"></p>
-        <p id="NextIcon"></p>
-
-
-</div>
-<!-- サムネイル -->	
-
-<!-- end of large-8 -->	
+<%= render 'bxslider' %>
 </div>
 
 <div class="cell large-4">
-<table class="unstriped this">
-	<tbody>
-		<tr>
-			<td>店舗名</td>
-			<th><%= @art.storename %></th>
-		</tr>
-		<tr>
-			<td>住所</td>
-			<th><%= @art.address %></th>
-		</tr>
-		<tr>
-			<td>TEL</td>
-			<th><%= @art.tel %></th>
-		</tr>
-		<tr>
-			<td>WEB</td>
-			<th><%= @art.web %></th>
-		</tr>
-		<tr>
-			<td>営業時間</td>
-			<th><%= @art.time %></th>
-		</tr>
-		<tr>
-			<td>定休日</td>
-			<th><%= @art.day %></th>
-		</tr>
-		<tr>
-			<td>エリア</td>
-			<th><%= @art.area %></th>
-		</tr>
-		<tr>
-			<td>抽出方法</td>
-			<th><%= @art.how %></th>
-		</tr>
-	</tbody>
-</table>
+<!-- テーブルなど -->	
+<%= render 'table' %>
+</div>
 </div>
 
 <div class="cell">
-	<div><h1 class="maint">Introduction</h1></div>
+	<div><h2 class="maint">Introduction</h2></div>
 	<div><%= @art.content %></div>
 </div>
 
 <div class="cell">
-	<div><h1 class="maint">Access Map</h1></div>
-
-	<div id="map" style="width: auto; height: 400px;"></div>
-
-<script>
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  });
-</script>
-</script>
+	<div><h2 class="maint">Access Map</h2></div>
+<%= render 'map' %>
 </div>
-</div>
+<!-- end of large-4 -->	
+      </div>
+<!-- panel-two --> 
+      <div class="tabs-panel" id="panel2">
+        <div><%= render 'interview' %></div>
+      </div>
+      <div class="tabs-panel" id="panel3">
+         <div><%= render 'news' %></div>
+      </div>
+      <div class="tabs-panel" id="panel4">
+         <div><%= render 'coupon' %></div>
+      </div>
+      <!-- end of tab -->	
+    </div>

@@ -25,11 +25,23 @@ end
     end
   end
 
+  def edit
+    @art = Art.find(params[:id])
+  end
+
+  def update
+  @art = Art.find(params[:id])
+  if @art.update_attributes(art_params)
+   flash[:success] = 'Profile updated successfully'
+   redirect_to @art
+  else
+    render 'edit'
+  end
+end
+
 private
 	def art_params
 		params.require(:art).permit(:name,:content,:storename,
                 :address,:tel,:web,:time,:day,:area,:how,:mapname, {images: []},:latitude,:longitude,:description)
 	end
 end
-
-
