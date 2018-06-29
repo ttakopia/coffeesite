@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'arts/index'
   get 'arts/show'
-  get 'signup', 	to: 'arts#new'
+  get 'new', 	to: 'arts#new'
 
   root 'static_pages#home'
 

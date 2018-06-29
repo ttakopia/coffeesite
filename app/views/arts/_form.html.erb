@@ -30,7 +30,7 @@
       <%= f.label :内容 %>
       <%= f.text_field :content %>
 
-       <div class="cell">マップ</div>
+      <div class="cell">マップ</div>
 
       <%= f.label :description %>
       <%= f.text_field :description %>
@@ -40,6 +40,26 @@
 
   <div class="cell"><h2 class="maint">Interview</h2></div>
 
+      <%= f.label :プロフ紹介 %>
+      <%= f.text_field :intprofcontent %>
+
+      <%= f.label :名前 %>
+      <%= f.text_field :intprofname %>
+
+      <%= f.label :一押しメニュー %>
+      <%= f.text_field :intprofmenu %>
+
+      <%= f.label :小タイトル１ %>
+      <%= f.text_field :inttitle1 %>
+
+      <%= f.label :コンテンツ１ %>
+      <%= f.text_field :intcontent1 %>
+
+      <%= f.label :小タイトル２ %>
+      <%= f.text_field :inttitle2 %>
+
+      <%= f.label :コンテンツ２ %>
+      <%= f.text_field :intcontent2 %>
 
       <%= f.submit "Create new article", class: "btn btn-primary" %>
     <% end %>
