@@ -204,6 +204,24 @@ $white: #fefefe;
   margin-bottom: 4px;
 }
 
+.entry-title {
+    background: #fff;
+    padding: 8px;
+    border-bottom: 1px solid #E6E6E6;
+    text-align: left;
+    height: 108px;
+}
+
+.cat-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 140%;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
 /* index */
 .entry-title {
     background: #fff;
@@ -212,4 +230,10 @@ $white: #fefefe;
     height: 132px;
 }
 
-/*  */
+.card {
+  margin-top: 20px;
+}
+
+.card-section a {
+  color: black;
+}

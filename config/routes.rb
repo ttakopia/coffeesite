@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'arts/index'
+  get 'index',  to: 'arts#index'
   get 'arts/show'
   get 'new', 	to: 'arts#new'
 
