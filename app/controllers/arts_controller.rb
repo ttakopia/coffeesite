@@ -1,6 +1,12 @@
 class ArtsController < ApplicationController
+
   def index
+    @tags = Art.tag_counts_on(:tags).order('count DESC')
+    if params[:tag]
+    @art = Art.tagged_with(params[:tag])
+  else
     @art = Art.all
+  end
   end
 
   def show
@@ -43,6 +49,6 @@ private
 	def art_params
 		params.require(:art).permit(:name,:content,:storename,
                 :address,:tel,:web,:time,:day,:area,:how,:mapname, {images: []},:latitude,:longitude,:description,
-                :inttitle1,:intcontent1,:inttitle2,:intcontent2,:intprofcontent,:intprofmenu,:intprofname)
+                :inttitle1,:intcontent1,:inttitle2,:intcontent2,:intprofcontent,:intprofmenu,:intprofname,:tag_list,:skill_list)
 	end
 end

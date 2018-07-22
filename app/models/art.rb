@@ -3,4 +3,6 @@ class Art < ApplicationRecord
 	serialize :images, JSON
 	geocoded_by :address
 	after_validation :geocode
+	acts_as_taggable # Alias for acts_as_taggable_on :tags
+    acts_as_taggable_on :skills, :interests
 end

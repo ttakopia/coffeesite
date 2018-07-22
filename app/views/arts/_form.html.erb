@@ -61,5 +61,11 @@
       <%= f.label :コンテンツ２ %>
       <%= f.text_field :intcontent2 %>
 
+
+  <div class="cell"><h2 class="maint">Tag</h2></div>
+      
+      <%= f.label :tag_list, 'タグをカンマ区切りで入力' %>
+      <%= text_field_tag 'art[tag_list]', @art.tag_list.join(',') %>
+
       <%= f.submit "Create new article", class: "btn btn-primary" %>
     <% end %>
