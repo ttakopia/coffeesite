@@ -9,7 +9,7 @@
   <%= link_to art_path(art) do %>
   <h4><%= art.storename %></h4>
   <% end %>
-  <p class="cat-name cat-CULTURE">大阪・吹田市</p>
+  <p class="cat-name cat-CULTURE"><%= art.area %></p>
   </div>
   </div>
   </div>
@@ -17,4 +17,5 @@
 </div>
         <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
             <%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
+            <%= tag.count %>
         <% end %>

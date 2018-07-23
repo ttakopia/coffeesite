@@ -34,7 +34,7 @@
 		</tr>
 		<tr>
 			<td>タグ</td>
-			<th><%= raw @art.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></th>
+			<th class="tag"><%= raw @art.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></th>
 		</tr>
 	</tbody>
 	</h5>
