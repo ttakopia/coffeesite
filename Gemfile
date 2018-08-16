@@ -40,6 +40,7 @@ gem 'mini_magick'
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'redis'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

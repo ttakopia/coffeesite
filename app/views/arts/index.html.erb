@@ -10,17 +10,39 @@
   <div class="card-section">
   <%= link_to art_path(art) do %>
   <h4><%= art.storename %></h4>
+  (<%= REDIS.zscore("arts/", "#{art.id}").floor %>PV)
   <% end %>
   <p class="cat-name cat-CULTURE"><%= art.area %></p>
-  <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y年%m月%d日") %></p>
+  <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y年%m月%d日") %>
+  </p>
   </div>
   </div>
   </div>
   <% end %>
   </div>
 </div>
+
 <div class="cell medium-3 large-3">
- 
+
+<h1>ランキング</h1> 
+  <% @ranks.each do |art| %>
+<div class="cell">
+<div class="card">
+  <%= image_tag art.images[0].url %>
+  <div class="card-section">
+  <%= link_to art_path(art) do %>
+  <h4><%= art.storename %></h4>
+  <% end %>
+  <p class="cat-name cat-CULTURE"><%= art.area %></p>
+  <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y/%m/%d") %></p>
+<p class="cat-name cat-CULTURE">(<%= REDIS.zscore("arts/", "#{art.id}").floor %>PV)</p>  
+  </div>
+  </div>
+  </div>
+  <% end %>
+</div>
+</div>
+
  <h1>広告</h1> 
   <% @art.each do |art| %>
 <div class="cell">
