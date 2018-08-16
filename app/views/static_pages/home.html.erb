@@ -29,9 +29,10 @@
 <div class="cell medium-3 large-3">
 
 <h1>ランキング</h1> 
-  <% @ranks.each do |art| %>
+  <% @ranks.each.with_index do |art, i| %>
 <div class="cell">
 <div class="card">
+No.<%= "#{i+1}" %>
   <%= image_tag art.images[0].url %>
   <div class="card-section">
   <%= link_to art_path(art) do %>
