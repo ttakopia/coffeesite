@@ -28,23 +28,30 @@
 
 <div class="cell medium-3 large-3">
 
-<h1>ランキング</h1> 
+<h3>ランキング</h3> 
   <% @ranks.each.with_index do |art, i| %>
-<div class="cell">
-<div class="card">
-No.<%= "#{i+1}" %>
-  <%= image_tag art.images[0].url %>
-  <div class="card-section">
-  <%= link_to art_path(art) do %>
-  <h4><%= art.storename %></h4>
+
+<h6 class="text-left ranking-number">No.<%= "#{i+1}" %></h6>
+<div class="ranking-block">
+<div class="ranking-image float-left"><%= image_tag art.images[0].url %></div>
+<div class="ranking-text">
+  <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y/%m/%d") %></p>
+<%= link_to art_path(art) do %>
+  <h6 class="ranking-title"><%= art.storename %></h6>
   <% end %>
   <p class="cat-name cat-CULTURE"><%= art.area %></p>
-  <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y/%m/%d") %></p>
-<p class="cat-name cat-CULTURE">(<%= REDIS.zscore("arts/", "#{art.id}").floor %>PV)</p>  
-  </div>
-  </div>
-  </div>
+<p class="cat-name cat-CULTURE">(<%= REDIS.zscore("arts/", "#{art.id}").floor %>PV)</p>
+</div>
+ </div>
   <% end %>
+
+<h3>カテゴリー</h3> 
+<div><p class="text-left">エリア</p></div>
+ <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+            <div class="button"><%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
+            <%= tag.count %></div>
+            <% end %>
+<div><p class="text-left">コーヒー</p></div>
 </div>
 </div>
 </div>

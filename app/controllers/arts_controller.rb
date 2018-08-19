@@ -56,6 +56,6 @@ private
 	def art_params
 		params.require(:art).permit(:name,:content,:storename,
                 :address,:tel,:web,:time,:day,:area,:how,:mapname, {images: []},:latitude,:longitude,:description,
-                :inttitle1,:intcontent1,:inttitle2,:intcontent2,:intprofcontent,:intprofmenu,:intprofname,:tag_list,:skill_list)
+                :inttitle1,:intcontent1,:inttitle2,:intcontent2,:intprofcontent,:intprofmenu,:intprofname,:tag_list,:beans_list)
 	end
 end

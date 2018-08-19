@@ -238,10 +238,10 @@ $white: #fefefe;
   color: black;
 }
 
-.css1 { font-size: 1.0em; }
-.css2 { font-size: 1.2em; }
-.css3 { font-size: 1.4em; }
-.css4 { font-size: 1.6em; }
+.css1 { font-size: 0.6em; }
+.css2 { font-size: 0.6em; }
+.css3 { font-size: 0.8em; }
+.css4 { font-size: 0.8em; }
 
 th.tag a {
   color: black;
@@ -272,6 +272,30 @@ th.tag a {
     display: block;
     padding-top: 10px;
     margin-bottom: 15px;
+}
+
+.ranking-number {
+ margin-top: 30px;
+}
+
+.ranking-image {
+  width: 20vh;
+}
+
+.ranking-block {
+  display: block;
+  float: none;
+  background-color: white;
+  height: 90px;
+}
+
+h6.ranking-title {
+  color: black;
+  font-size: 14px;
+}
+
+h6.ranking-title a:hover{
+  color: white;
 }
 
 /* Sideline */
