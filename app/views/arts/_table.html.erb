@@ -33,8 +33,12 @@
 			<th><%= @art.how %></th>
 		</tr>
 		<tr>
-			<td>タグ</td>
+			<td>エリアタグ</td>
 			<th class="tag"><%= raw @art.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></th>
+		</tr>
+		<tr>
+			<td>コーヒー豆</td>
+			<th class="tag"><%= raw @art.coffeebean_list.map { |t| link_to t, tag_path(t) }.join(', ') %></th>
 		</tr>
 	</tbody>
 	</h5>

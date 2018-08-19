@@ -67,5 +67,8 @@
       <%= f.label :tag_list, 'タグをカンマ区切りで入力' %>
       <%= text_field_tag 'art[tag_list]', @art.tag_list.join(',') %>
 
+      <%= f.label :coffeebean_list, 'タグをカンマ区切りで入力' %>
+      <%= text_field_tag 'art[coffeebean_list]', @art.coffeebean_list.join(',') %>
+
       <%= f.submit "Create new article", class: "btn btn-primary" %>
     <% end %>

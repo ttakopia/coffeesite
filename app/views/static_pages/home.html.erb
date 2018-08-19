@@ -28,7 +28,7 @@
 
 <div class="cell medium-3 large-3">
 
-<h3>ランキング</h3> 
+<h3 class="side-title">ランキング</h3> 
   <% @ranks.each.with_index do |art, i| %>
 
 <h6 class="text-left ranking-number">No.<%= "#{i+1}" %></h6>
@@ -45,13 +45,17 @@
  </div>
   <% end %>
 
-<h3>カテゴリー</h3> 
+<h3 class="side-title">カテゴリー</h3> 
 <div><p class="text-left">エリア</p></div>
  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-            <div class="button"><%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
+            <div class="button tiny"><%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
             <%= tag.count %></div>
             <% end %>
 <div><p class="text-left">コーヒー</p></div>
+<% tag_cloud(@beans, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+            <div class="button tiny alert"><%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
+            <%= tag.count %></div>
+            <% end %>
 </div>
 </div>
 </div>

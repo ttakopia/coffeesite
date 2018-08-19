@@ -238,10 +238,10 @@ $white: #fefefe;
   color: black;
 }
 
-.css1 { font-size: 0.6em; }
-.css2 { font-size: 0.6em; }
-.css3 { font-size: 0.8em; }
-.css4 { font-size: 0.8em; }
+.css1 { font-size: 0.8em; }
+.css2 { font-size: 0.8em; }
+.css3 { font-size: 1.0em; }
+.css4 { font-size: 1.0em; }
 
 th.tag a {
   color: black;
@@ -296,6 +296,10 @@ h6.ranking-title {
 
 h6.ranking-title a:hover{
   color: white;
+}
+
+.side-title {
+  margin-top: 10px;
 }
 
 /* Sideline */

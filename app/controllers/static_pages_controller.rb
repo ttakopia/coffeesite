@@ -2,8 +2,10 @@ class StaticPagesController < ApplicationController
 	 before_action :set_ranking_data
   def home
   	@tags = Art.tag_counts_on(:tags).order('count DESC')
+    @beans = Art.tag_counts_on(:coffeebeans).order('count DESC')
     if params[:tag]
     @art = Art.tagged_with(params[:tag])
+    @art = Art.tagged_with(params[:coffeebean])
   else
     @art = Art.all
   end
