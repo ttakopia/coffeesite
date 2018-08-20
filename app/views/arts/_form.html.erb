@@ -70,5 +70,29 @@
       <%= f.label :coffeebean_list, 'タグをカンマ区切りで入力' %>
       <%= text_field_tag 'art[coffeebean_list]', @art.coffeebean_list.join(',') %>
 
+      <div class="details">
+    <!-- #order-detailsの下に追加するように指定 -->
+    <p><%= link_to_add_association '行を追加', f, :menus,
+        data: {
+          association_insertion_node: '#menus',
+          association_insertion_method: 'append'
+        } %></p>
+    <table>
+      <thead>
+        <tr>
+        <th>ドリンク</th>
+        <th>フード</th>
+        <th>他</th>
+        </tr>
+      </thead>
+      <tbody id="menus">
+        <%= f.fields_for :menus do |detail| %>
+          <%= render 'menu_fields', f: detail %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+
       <%= f.submit "Create new article", class: "btn btn-primary" %>
     <% end %>

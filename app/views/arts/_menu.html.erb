@@ -2,19 +2,24 @@
 <h2 class="maint">Menu</h2>
 <div class="menu-title">Drink</div>
 <div class="menu-content">
-<h5>drip coffee</h5>
-<h5>drip coffee</h5>
-<h5>drip coffee</h5>
-<h5>drip coffee</h5>
+<h5>
+<% @art.menus.each do |art| %>
+<div><%= art.drink %></div>
+<% end %>
+</h5>
 </div>
+
 <div class="menu-title">Food</div>
-<h5>drip coffee</h5>
-<h5>drip coffee</h5>
-<h5>drip coffee</h5>
-<h5>drip coffee</h5>
+<h5>
+<% @art.menus.each do |art| %>
+<div><%= art.food %></div>
+<% end %>
+</h5>
+
 <div class="menu-title">Other</div>
-<h5>drip coffee</h5>
-<h5>drip coffee</h5>
-<h5>drip coffee</h5>
-<h5>drip coffee</h5>
+<h5>
+<% @art.menus.each do |art| %>
+<div><%= art.other %></div>
+<% end %>
+</h5>
 </div>

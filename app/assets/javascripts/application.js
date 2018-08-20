@@ -17,6 +17,7 @@
 //= require foundation
 //= require underscore
 //= require gmaps/google
+//= require cocoon
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

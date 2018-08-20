@@ -1,4 +1,6 @@
 class Art < ApplicationRecord
+  has_many :menus
+  accepts_nested_attributes_for :menus, allow_destroy: true
 	mount_uploaders :images, ImageUploader
 	serialize :images, JSON
 	geocoded_by :address
