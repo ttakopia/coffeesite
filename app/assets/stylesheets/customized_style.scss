@@ -222,6 +222,36 @@ $white: #fefefe;
   text-transform: uppercase;
 }
 
+/* Menu */
+
+
+.menu-title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -75px;
+    width: 150px;
+    height: 1px;
+    background: rgba(68, 68,68, 0.6)
+}
+
+.menu-title {
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    /* font-size: 22px; */
+    size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: -0.04em;
+    word-break: break-all;
+    vertical-align: bottom;
+    display: block;
+}
+
 /* index */
 .entry-title {
     background: #fff;
@@ -301,6 +331,8 @@ h6.ranking-title a:hover{
 .side-title {
   margin-top: 10px;
 }
+
+
 
 /* Sideline */
 $sidelines-text-padding: 0.5em !default;
