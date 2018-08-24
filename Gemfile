@@ -42,6 +42,7 @@ gem 'geocoder'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'redis'
 gem 'cocoon'
+gem 'gretel'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -135,6 +135,14 @@ $white: #fefefe;
   height: 45px;
 }
 
+
+/* Breadcrumbs */
+
+.breadcrumbs {
+  float: left;
+  margin-bottom: 100px;
+}
+
 /* Article Title */
 .maint {
     font-family: 'Montserrat';
@@ -146,7 +154,11 @@ $white: #fefefe;
 
 .pagetitle {
   background: #eae6dd;
-  margin-top: 30px;
+  margin-top: 45px;
+}
+
+.page-top {
+  margin-top: 45px;
 }
 
 /* Menu-text */
@@ -331,7 +343,6 @@ h6.ranking-title a:hover{
 .side-title {
   margin-top: 10px;
 }
-
 
 
 /* Sideline */

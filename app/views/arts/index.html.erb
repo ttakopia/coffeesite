@@ -1,6 +1,10 @@
 <%= provide(:title, '@art.title') %>
 
-<div class="grid-x grid-margin-x">
+<span class="breadcrumbs">
+<% breadcrumb :arts %>
+</span>
+
+<div class="grid-x page-top grid-margin-x">
 <div class="cell small-12 medium-9 large-9">
 <div class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-3">
 <% @art.each do |art| %>
@@ -22,48 +26,9 @@
   </div>
 </div>
 
-<div class="cell">
-  <div><h2 class="maint">Access Map</h2></div>
-<%= render 'map' %>
-</div>
-
 <div class="cell medium-3 large-3">
-
-<h1>ランキング</h1> 
-  <% @ranks.each do |art| %>
-<div class="cell">
-<div class="card">
-  <%= image_tag art.images[0].url %>
-  <div class="card-section">
-  <%= link_to art_path(art) do %>
-  <h4><%= art.storename %></h4>
-  <% end %>
-  <p class="cat-name cat-CULTURE"><%= art.area %></p>
-  <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y/%m/%d") %></p>
-<p class="cat-name cat-CULTURE">(<%= REDIS.zscore("arts/", "#{art.id}").floor %>PV)</p>  
-  </div>
-  </div>
-  </div>
-  <% end %>
-</div>
 </div>
 
- <h1>広告</h1> 
-  <% @art.each do |art| %>
-<div class="cell">
-<div class="card">
-  <%= image_tag art.images[0].url %>
-  <div class="card-section">
-  <%= link_to art_path(art) do %>
-  <h4><%= art.storename %></h4>
-  <% end %>
-  <p class="cat-name cat-CULTURE"><%= art.area %></p>
-  <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y/%m/%d") %></p>
-  </div>
-  </div>
-  </div>
-  <% end %>
-</div>
 </div>
         <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
             <%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>

@@ -1,5 +1,9 @@
 <%= provide(:title, '@art.title') %>
 
+<div class="breadcrumbs">
+<% breadcrumb :art, @art %>
+</div>
+
 <div class="cell pagetitle">
 <h2><%= @art.storename %></h2>
 </div>

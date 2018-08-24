@@ -86,6 +86,8 @@ GEM
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     gmaps4rails (2.1.2)
+    gretel (3.0.9)
+      rails (>= 3.1.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -216,6 +218,7 @@ DEPENDENCIES
   foundation-rails (= 6.4.3.0)
   geocoder
   gmaps4rails
+  gretel
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.1)
   jquery-turbolinks
