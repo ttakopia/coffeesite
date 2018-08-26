@@ -5,7 +5,7 @@ class CreateMenus < ActiveRecord::Migration[5.1]
       t.string :drink
       t.string :food
       t.string :other
-
+     
       t.timestamps
     end
   end

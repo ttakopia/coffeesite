@@ -1,0 +1,2 @@
+class AddColumnToMenu < ApplicationRecord
+end
