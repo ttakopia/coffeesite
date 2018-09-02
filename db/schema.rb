@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180826042730) do
 
-  create_table "add_column_to_menus", force: :cascade do |t|
-    t.string "drinkprice"
-    t.string "foodprice"
-    t.string "otherprice"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "arts", force: :cascade do |t|
     t.string "name"
     t.text "content"
