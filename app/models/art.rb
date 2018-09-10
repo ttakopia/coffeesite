@@ -1,6 +1,7 @@
 class Art < ApplicationRecord
   has_many :menus
   has_many :favorites, dependent: :destroy
+  has_many :users, through: :favorites
 
   accepts_nested_attributes_for :menus, allow_destroy: true
 	mount_uploaders :images, ImageUploader
