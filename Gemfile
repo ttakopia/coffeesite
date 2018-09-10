@@ -44,6 +44,7 @@ gem 'redis'
 gem 'cocoon'
 gem 'gretel'
 gem 'sorcery'
+gem 'foundation-icons-sass-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

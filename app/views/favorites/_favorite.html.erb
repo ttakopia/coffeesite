@@ -1,0 +1,9 @@
+<% if current_user && art.like_user(current_user.id) %>
+  <%= link_to art_favorite_path(art.like_user(current_user.id), art_id: art.id), method: :delete, id: "like-buttons", remote: true do %>
+    <i class="fi-heart"  style="color: red;"></i>
+      <% end %>
+<% else %>
+  <%= link_to art_favorites_path(art), method: :post, id: "like-buttons", remote: true do %>
+        <i class="fi-heart"></i>
+  <% end %>
+<% end %>

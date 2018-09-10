@@ -1,5 +1,7 @@
 class Art < ApplicationRecord
   has_many :menus
+  has_many :favorites, dependent: :destroy
+
   accepts_nested_attributes_for :menus, allow_destroy: true
 	mount_uploaders :images, ImageUploader
 	serialize :images, JSON
@@ -13,4 +15,7 @@ class Art < ApplicationRecord
   	def railsrank
       REDIS.zrevrange "arts/", 0, 19, withscores: true
   	end
+    def like_user(user_id)
+      favorites.find_by(user_id: user_id)
+    end
 end
