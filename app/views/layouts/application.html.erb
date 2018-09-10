@@ -15,15 +15,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"></script>
   </head>
   <body>
-  <div id="login">
-    <% if current_user %>
-      <%= link_to "Favorite", user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-  </div>
+  
   <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
