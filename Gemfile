@@ -45,6 +45,7 @@ gem 'cocoon'
 gem 'gretel'
 gem 'sorcery'
 gem 'foundation-icons-sass-rails'
+gem 'seed-fu', '~> 2.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

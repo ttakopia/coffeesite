@@ -1,3 +1,5 @@
+
+<% if @art.images %>
 <ul class="bxslider">
   <li><img src="<%= @art.images[1].url %>" /></li>
   <li><img src="<%= @art.images[2].url %>" /></li>
@@ -17,3 +19,6 @@
             </ul>
         <p id="PrevIcon"></p>
         <p id="NextIcon"></p>
+<% else %>
+<li>Nondata</li>
+<% end %>

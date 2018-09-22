@@ -1,5 +1,6 @@
 class ArtsController < ApplicationController
   before_action :set_ranking_data
+  skip_before_action :require_login,only: [:show, :index]
 
   def index
     @tags = Art.tag_counts_on(:tags).order('count DESC')
