@@ -236,7 +236,6 @@ $white: #fefefe;
 
 /* Menu */
 
-
 .menu-title::before {
     content: '';
     position: absolute;
@@ -262,6 +261,10 @@ $white: #fefefe;
     word-break: break-all;
     vertical-align: bottom;
     display: block;
+}
+
+.title-bar-title {
+  margin: 0 auto;
 }
 
 /* index */

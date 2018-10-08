@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 	 before_action :set_ranking_data
    skip_before_action :require_login
+
   def home
   	@tags = Art.tag_counts_on(:tags).order('count DESC')
     @beans = Art.tag_counts_on(:coffeebeans).order('count DESC')
