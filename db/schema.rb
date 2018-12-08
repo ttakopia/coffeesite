@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180909152151) do
 
-  create_table "arts", force: :cascade do |t|
+  create_table "arts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.text "content"
     t.datetime "created_at", null: false
@@ -35,22 +35,22 @@ ActiveRecord::Schema.define(version: 20180909152151) do
     t.string "images"
     t.string "imagesprof"
     t.string "description"
-    t.float "latitude"
-    t.float "longitude"
+    t.float "latitude", limit: 24
+    t.float "longitude", limit: 24
     t.integer "favorites_count"
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "art_id"
+  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "art_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["art_id"], name: "index_favorites_on_art_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "menus", force: :cascade do |t|
-    t.integer "art_id"
+  create_table "menus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "art_id"
     t.string "drink"
     t.string "food"
     t.string "other"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20180909152151) do
     t.index ["art_id"], name: "index_menus_on_art_id"
   end
 
-  create_table "taggings", force: :cascade do |t|
+  create_table "taggings", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.integer "taggable_id"
@@ -81,13 +81,13 @@ ActiveRecord::Schema.define(version: 20180909152151) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string "name"
+  create_table "tags", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", collation: "utf8_bin"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
@@ -96,4 +96,7 @@ ActiveRecord::Schema.define(version: 20180909152151) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "favorites", "arts"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "menus", "arts"
 end

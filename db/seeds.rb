@@ -42,6 +42,6 @@ Art.seed do |s|
 	s.intprofcontent	= "サンプルコンテンツ"
 	s.intprofmenu		= "サンプルメニュー"
 	s.imagesprof		= "#{Rails.root}/db/image/1.jpg"
-	s.images            = samples
+	s.images            = images
 end
 end
