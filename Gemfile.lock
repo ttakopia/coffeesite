@@ -52,7 +52,6 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.12)
-    bcrypt_pbkdf (1.0.0)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.2)
@@ -93,7 +92,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
-    ed25519 (1.2.4)
     erubi (1.7.1)
     execjs (2.7.0)
     faraday (0.12.2)
@@ -263,7 +261,6 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 6.0)
   autoprefixer-rails
-  bcrypt_pbkdf (>= 1.0, < 2.0)
   byebug
   capistrano
   capistrano-bundler
@@ -273,7 +270,6 @@ DEPENDENCIES
   carrierwave
   cocoon
   coffee-rails (~> 4.2)
-  ed25519 (>= 1.2, < 2.0)
   foundation-icons-sass-rails
   foundation-rails (= 6.4.3.0)
   geocoder
