@@ -6,5 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
-  channel_prefix: example_production
+  url: redis://jakartapj.pk6acu.ng.0001.apse1.cache.amazonaws.com
