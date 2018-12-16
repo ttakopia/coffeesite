@@ -26,4 +26,5 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: coffeesite_production
+  socket: /var/lib/mysql/mysql.sock
