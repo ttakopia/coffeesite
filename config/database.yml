@@ -27,4 +27,7 @@ test:
 production:
   <<: *default
   database: coffeesite_production
-  socket: /var/lib/mysql/mysql.sock
+  username: root
+  password: takopia0316
+  host: jakarta-db-mysql.cxk8jmt9re2a.ap-southeast-1.rds.amazonaws.com
+  port: 3306
