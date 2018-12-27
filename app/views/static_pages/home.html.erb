@@ -16,9 +16,11 @@
   <%= link_to art_path(art) do %>
   <h4><%= art.storename %></h4>
   <% end %>
+  <% if art.present? %>
   <p class="cat-name cat-CULTURE"><%= art.area %></p>
   <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y/%m/%d") %></p>
-   <p class="cat-name cat-CULTURE"><%= REDIS.zscore("arts/", "#{art.id}").floor %>PV</p>
+  <p class="cat-name cat-CULTURE"><%= REDIS.zscore("arts/", "#{art.id}").floor %>PV</p>
+  <% end %>
    <span id="like-of-<%= art.id %>">
   <%= render partial: 'favorites/favorite', locals: { art: art, favorites: @favorites } %>
   </span>
