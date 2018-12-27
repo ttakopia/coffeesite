@@ -74,6 +74,8 @@ namespace :deploy do
     end
   end
 
+  after :deploy, "deploy:seed"
+
   after :publishing, :restart
 
   after :restart, :clear_cache do

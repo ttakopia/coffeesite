@@ -1,5 +1,5 @@
 Rails.application.configure do
-  ENV["REDIS"] = "jakartapj.pk6acu.ng.0001.apse1.cache.amazonaws.com:6379" # Endpoint + Port
+  ENV["REDIS"] = "redis://jakartapj.pk6acu.ng.0001.apse1.cache.amazonaws.com" # Endpoint + Port
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -29,7 +29,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 

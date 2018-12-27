@@ -26,6 +26,8 @@ test:
 
 production:
   <<: *default
+  adapter: mysql2
+  encoding: utf8
   database: coffeesite_production
   username: root
   password: takopia0316
