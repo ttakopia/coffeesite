@@ -23,13 +23,6 @@ Art.seed do |s|
 	s.coffeebean_list 	= "Lombok Sembal LIN"
 	s.content			= "ロンボク島はマタラム地区にある自家焙煎カフェ。インドネシアのコーヒー豆を中心に取り扱っており、ロンボク島産のコーヒー豆もあり。抽出方法もフィルター・サイフォン・フレンチぷれすなど多数から選べることができ、本格派のカフェ。店長のEviさんも気さくで良い雰囲気のカフェであり、ロンボク島でおすすめのカフェ"
 	s.description 		= "ストアが立ち並ぶ中にあり、少しわかりにくい。看板を目当てに。"
-	s.inttitle1			= ""
-	s.intcontent1		= ""	
-	s.inttitle2			= ""
-	s.intcontent2		= ""
-	s.intprofname		= ""
-	s.intprofcontent	= ""
-	s.intprofmenu		= ""
 	s.imagesprof		= "#{Rails.root}/db/image/1-1.jpg"
 	s.images            = samples
 end
