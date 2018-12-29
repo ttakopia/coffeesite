@@ -121,18 +121,16 @@ $white: #fefefe;
 
 /* Table */
 .this {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .this td {
+  background-color: #f1f1f1;
   width: 100px;
-  height: 43px;
-  background: #f2f2f2;
-  float: left;
 }
 
-.this tr {
-  height: 45px;
+.this th {
+  text-align: left;
 }
 
 
