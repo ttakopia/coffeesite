@@ -1,12 +1,12 @@
 
 samples = [
-	Rails.root.join("db/image/1.jpg").open,
-	Rails.root.join("db/image/2.jpg").open,
-	Rails.root.join("db/image/3.jpg").open,
-	Rails.root.join("db/image/4.jpg").open,
-	Rails.root.join("db/image/5.jpg").open,
-	Rails.root.join("db/image/6.jpg").open,
-	Rails.root.join("db/image/7.jpg").open
+	Rails.root.join("db/image/1-1.jpg").open,
+	Rails.root.join("db/image/1-2.jpg").open,
+	Rails.root.join("db/image/1-3.jpg").open,
+	Rails.root.join("db/image/1-4.jpg").open,
+	Rails.root.join("db/image/1-5.jpg").open,
+	Rails.root.join("db/image/1-6.jpg").open,
+	Rails.root.join("db/image/1-7.jpg").open
 ]
 
 Art.seed do |s|
@@ -23,7 +23,7 @@ Art.seed do |s|
 	s.coffeebean_list 	= "Lombok Sembal LIN"
 	s.content			= "ロンボク島はマタラム地区にある自家焙煎カフェ。インドネシアのコーヒー豆を中心に取り扱っており、ロンボク島産のコーヒー豆もあり。抽出方法もフィルター・サイフォン・フレンチぷれすなど多数から選べることができ、本格派のカフェ。店長のEviさんも気さくで良い雰囲気のカフェであり、ロンボク島でおすすめのカフェ"
 	s.description 		= "ストアが立ち並ぶ中にあり、少しわかりにくい。看板を目当てに。"
-	s.imagesprof		= "#{Rails.root}/db/image/1.jpg"
+	s.imagesprof		= "#{Rails.root}/db/image/1-1.jpg"
 	s.images            = samples
 end
 
@@ -48,7 +48,7 @@ Art.seed do |s|
 	s.intprofname		= "サンプルネーム"
 	s.intprofcontent	= "サンプルコンテンツ"
 	s.intprofmenu		= "サンプルメニュー"
-	s.imagesprof		= "#{Rails.root}/db/image/1.jpg"
+	s.imagesprof		= "#{Rails.root}/db/image/1-2.jpg"
 	s.images            = samples
 end
 
@@ -73,7 +73,7 @@ Art.seed do |s|
 	s.intprofname		= "サンプルネーム"
 	s.intprofcontent	= "サンプルコンテンツ"
 	s.intprofmenu		= "サンプルメニュー"
-	s.imagesprof		= "#{Rails.root}/db/image/1.jpg"
+	s.imagesprof		= "#{Rails.root}/db/image/1-3.jpg"
 	s.images            = samples
 end
 
@@ -99,6 +99,6 @@ Art.seed do |s|
 	s.intprofname		= "サンプルネーム"
 	s.intprofcontent	= "サンプルコンテンツ"
 	s.intprofmenu		= "サンプルメニュー"
-	s.imagesprof		= "#{Rails.root}/db/image/1.jpg"
+	s.imagesprof		= "#{Rails.root}/db/image/1-4.jpg"
 	s.images            = samples
 end
