@@ -10,11 +10,6 @@ class StaticPagesController < ApplicationController
     @art = Art.tagged_with(params[:coffeebean])
   else
     @art = Art.all
-    @hash = Gmaps4rails.build_markers(@art) do |art, marker|
-    marker.lat art.latitude
-    marker.lng art.longitude
-    marker.infowindow art.description
-  end
   end
   end
 

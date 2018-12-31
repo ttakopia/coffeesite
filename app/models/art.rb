@@ -6,8 +6,8 @@ class Art < ApplicationRecord
   accepts_nested_attributes_for :menus, allow_destroy: true
 	mount_uploaders :images, ImageUploader
 	serialize :images, JSON
-	geocoded_by :address
-	after_validation :geocode
+	#geocoded_by :address
+	#after_validation :geocode, if: :address_changed?
 	acts_as_taggable # Alias for acts_as_taggable_on :tags
     acts_as_taggable_on :coffeebeans, :interests
     def page_incr

@@ -25,6 +25,8 @@ Art.seed do |s|
 	s.description 		= "ストアが立ち並ぶ中にあり、少しわかりにくい。看板を目当てに。"
 	s.imagesprof		= "#{Rails.root}/db/image/1-1.jpg"
 	s.images            = samples
+	s.latitude			= ""
+    s.longitude			= ""
 end
 
 Art.seed do |s|

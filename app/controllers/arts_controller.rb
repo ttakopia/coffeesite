@@ -8,22 +8,12 @@ class ArtsController < ApplicationController
     @art = Art.tagged_with(params[:tag])
   else
     @art = Art.all
-    @hash = Gmaps4rails.build_markers(@art) do |art, marker|
-    marker.lat art.latitude
-    marker.lng art.longitude
-    marker.infowindow art.description
-  end
   end
   end
 
   def show
   	@art = Art.find(params[:id])
     REDIS.zincrby "arts/", 1, "#{@art.id}"
-    @hash = Gmaps4rails.build_markers(@art) do |art, marker|
-    marker.lat art.latitude
-    marker.lng art.longitude
-    marker.infowindow art.description
-    end
   end
 
   def set_ranking_data
