@@ -4,7 +4,7 @@
 <div class="menu-content">
 <h5>
 <% @art.menus.each do |art| %>
-<div><%= art.drink %><%= art.drinkprice %></span></div>
+<div><%= art.drink %>&emsp;&emsp;<%= art.drinkprice %></span></div>
 <% end %>
 </h5>
 </div>
@@ -12,7 +12,7 @@
 <div class="menu-title">Food</div>
 <h5>
 <% @art.menus.each do |art| %>
-<div><%= art.food %><%= art.foodprice %></div>
+<div><%= art.food %>&emsp;&emsp;<%= art.foodprice %></div>
 <% end %>
 </h5>
 

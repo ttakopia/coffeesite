@@ -248,17 +248,27 @@ $white: #fefefe;
 .menu-title {
     position: relative;
     margin-bottom: 10px;
-    margin-top: 20px;
+    margin-top: 40px;
     padding-bottom: 10px;
     /* font-size: 22px; */
     size: 2.2rem;
     font-weight: bold;
+    font-size: 1.5rem;
     text-align: center;
     line-height: 1.4;
     letter-spacing: -0.04em;
     word-break: break-all;
     vertical-align: bottom;
     display: block;
+}
+
+.menu-content {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.menu-contents {
+  font-size: 1.3rem;
 }
 
 .title-bar-title {

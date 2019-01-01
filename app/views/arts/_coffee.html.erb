@@ -1,0 +1,27 @@
+<div class="cell">
+<h2 class="maint">Coffee</h2>
+
+<div class="menu-title">CoffeeBeans</div>
+<% @art.beans.each do |art| %>
+<div>
+<span class="menu-content"><%= art.name %></span>:<span class="menu-contents"><%= art.price %></span>
+</div>
+<% end %>
+
+<div class="menu-title">Brewing</div>
+<% @art.brews.each do |art| %>
+<div>
+<span class="menu-content"><%= art.name %></span><span class="menu-contents"><%= art.price %></span>
+</div>
+<% end %>
+
+
+<div class="menu-title">Other Coffee</div>
+<% @art.elsecoffees.each do |art| %>
+<div>
+<span class="menu-content"><%= art.elsename %></span>
+</div>
+<% end %>
+
+
+</div>

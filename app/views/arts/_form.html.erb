@@ -95,7 +95,68 @@
       </tbody>
     </table>
   </div>
-
-
+   <div class="details">
+    <!-- #order-detailsの下に追加するように指定 -->
+    <p><%= link_to_add_association '行を追加', f, :beans,
+        data: {
+          association_insertion_node: '#beans',
+          association_insertion_method: 'append'
+        } %></p>
+    <table>
+      <thead>
+        <tr>
+        <th>コーヒー豆</th>
+        <th>説明</th>
+        </tr>
+      </thead>
+      <tbody id="beans">
+        <%= f.fields_for :beans do |detail| %>
+          <%= render 'bean_fields', f: detail %>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+    <div class="details">
+    <!-- #order-detailsの下に追加するように指定 -->
+    <p><%= link_to_add_association '行を追加', f, :brews,
+        data: {
+          association_insertion_node: '#brews',
+          association_insertion_method: 'append'
+        } %></p>
+    <table>
+      <thead>
+        <tr>
+        <th>抽出方法</th>
+        <th>説明</th>
+        </tr>
+      </thead>
+      <tbody id="brews">
+        <%= f.fields_for :brews do |detail| %>
+          <%= render 'brew_fields', f: detail %>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+    <div class="details">
+    <!-- #order-detailsの下に追加するように指定 -->
+    <p><%= link_to_add_association '行を追加', f, :elsecoffees,
+        data: {
+          association_insertion_node: '#elsecoffees',
+          association_insertion_method: 'append'
+        } %></p>
+    <table>
+      <thead>
+        <tr>
+        <th>コーヒー名</th>
+        <th>説明</th>
+        </tr>
+      </thead>
+      <tbody id="elsecoffees">
+        <%= f.fields_for :elsecoffees do |detail| %>
+          <%= render 'elsecoffee_fields', f: detail %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
       <%= f.submit "Create new article", class: "btn btn-primary" %>
     <% end %>

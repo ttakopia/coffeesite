@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180909152151) do
+ActiveRecord::Schema.define(version: 20190101151127) do
 
   create_table "arts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -38,6 +38,34 @@ ActiveRecord::Schema.define(version: 20180909152151) do
     t.float "latitude", limit: 24
     t.float "longitude", limit: 24
     t.integer "favorites_count"
+  end
+
+  create_table "beans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "art_id"
+    t.string "name"
+    t.string "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["art_id"], name: "index_beans_on_art_id"
+  end
+
+  create_table "brews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "art_id"
+    t.string "name"
+    t.string "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["art_id"], name: "index_brews_on_art_id"
+  end
+
+  create_table "elsecoffees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "art_id"
+    t.string "name"
+    t.string "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "elsename"
+    t.index ["art_id"], name: "index_elsecoffees_on_art_id"
   end
 
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -96,6 +124,9 @@ ActiveRecord::Schema.define(version: 20180909152151) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "beans", "arts"
+  add_foreign_key "brews", "arts"
+  add_foreign_key "elsecoffees", "arts"
   add_foreign_key "favorites", "arts"
   add_foreign_key "favorites", "users"
   add_foreign_key "menus", "arts"

@@ -1,9 +1,12 @@
 class Art < ApplicationRecord
   has_many :menus
+  has_many :beans
+  has_many :brews
+  has_many :elsecoffees
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
 
-  accepts_nested_attributes_for :menus, allow_destroy: true
+  accepts_nested_attributes_for :menus, :brews, :elsecoffees, :beans, allow_destroy: true
 	mount_uploaders :images, ImageUploader
 	serialize :images, JSON
 	#geocoded_by :address
