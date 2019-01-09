@@ -6,4 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: redis://jakartapj.pk6acu.ng.0001.apse1.cache.amazonaws.com
+  url: redis://backup.jakartapj.pk6acu.ng.0001.apse1.cache.amazonaws.com
