@@ -7,4 +7,10 @@ class User < ApplicationRecord
 	validates :password, confirmation: true
  	validates :password_confirmation, presence: true
     validates :email, uniqueness: true
+
+    enum role: {
+    	member: 1,
+    	author: 2,
+    	admin: 3
+    }
 end

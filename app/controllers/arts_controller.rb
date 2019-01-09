@@ -35,6 +35,7 @@ class ArtsController < ApplicationController
   end
 
   def edit
+    authorize! @art
     @art = Art.find(params[:id])
   end
 

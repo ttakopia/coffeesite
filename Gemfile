@@ -44,6 +44,7 @@ gem 'gretel'
 gem 'sorcery'
 gem 'foundation-icons-sass-rails'
 gem 'seed-fu', '~> 2.3'
+gem 'banken'  #
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190101151127) do
+ActiveRecord::Schema.define(version: 20190103131149) do
 
   create_table "arts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 20190101151127) do
     t.string "salt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", default: 1, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
