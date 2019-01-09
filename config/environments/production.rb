@@ -1,5 +1,5 @@
 Rails.application.configure do
-  ENV["REDIS"] = "redis://jakartapj.pk6acu.ng.0001.apse1.cache.amazonaws.com:6379" # Endpoint + Port
+  ENV["REDIS"] = "redis://backup.jakartapj.pk6acu.ng.0001.apse1.cache.amazonaws.com:6379" # Endpoint + Port
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

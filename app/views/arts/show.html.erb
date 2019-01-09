@@ -4,6 +4,12 @@
 <% breadcrumb :art, @art %>
 </div>
 
+<!-- Bankenでエラー発生：
+<% if loyalty(@art, :arts).edit? %>
+  <%= link_to 'Edit', edit_art_path(@art) %>
+<% end %>
+-->
+
 <div class="cell pagetitle">
 <h2><%= @art.storename %></h2>
 </div>

@@ -5,5 +5,5 @@ test:
  host: 'localhost'
  port: '6379’
 production:
- host: 'jakartapj.pk6acu.ng.0001.apse1.cache.amazonaws.com'
+ host: 'backup.pk6acu.ng.0001.apse1.cache.amazonaws.com'
  port: '6379'
