@@ -4,20 +4,23 @@
 <% breadcrumb :art, @art %>
 </div>
 
-<!-- Bankenでエラー発生：
+<% if false %>
+#Baknenにてエラー発生。訂正必要
 <% if loyalty(@art, :arts).edit? %>
   <%= link_to 'Edit', edit_art_path(@art) %>
 <% end %>
--->
+<% end %>
 
 <div class="cell pagetitle">
 <h2><%= @art.storename %></h2>
 </div>
-<!-- お気に入り記事に追加：
+
+<% if false %>
 <span id="like-of-<%= @art.id %>">
   <%= render partial: 'favorites/favorite', locals: { art: @art, favorites: @favorites } %>
   </span>
--->
+<% end %>
+
 <div>
 <ul class="tabs" data-tabs id="example-tabs">
       <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Information</a></li>
