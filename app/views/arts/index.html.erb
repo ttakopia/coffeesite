@@ -4,6 +4,9 @@
 <% breadcrumb :arts %>
 </span>
 
+</br></br>
+<h2 class="maint">CAFE</h2>
+
 <div class="grid-x page-top grid-margin-x">
 <div class="cell small-12 medium-9 large-9">
 <div class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-3">
@@ -35,7 +38,9 @@
 </div>
 
 </div>
+<% if false %>
         <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
             <%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
             <%= tag.count %>
         <% end %>
+<% end %>

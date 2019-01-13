@@ -4,14 +4,15 @@
 <div class="menu-title">CoffeeBeans</div>
 <% @art.beans.each do |art| %>
 <div>
-<span class="menu-content"><%= art.name %></span>:<span class="menu-contents"><%= art.price %></span>
+<span class="menu-content"><p><%= art.name %></p></span>
+<span class="menu-contents"><p><%= art.price %></p></span>
 </div>
 <% end %>
 
 <div class="menu-title">Brewing</div>
 <% @art.brews.each do |art| %>
 <div>
-<span class="menu-content"><%= art.name %></span><span class="menu-contents"><%= art.price %></span>
+<span class="menu-content"><p><%= art.name %></p></span><span class="menu-contents"><%= art.price %></span>
 </div>
 <% end %>
 
@@ -19,7 +20,7 @@
 <div class="menu-title">Other Coffee</div>
 <% @art.elsecoffees.each do |art| %>
 <div>
-<span class="menu-content"><%= art.elsename %></span>
+<span class="menu-content"><p><%= art.elsename %></p></span>
 </div>
 <% end %>
 

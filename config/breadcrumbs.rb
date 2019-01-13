@@ -5,7 +5,7 @@ end
 
 # Art list
 crumb :arts do
-   link "Arts", arts_path
+   link "Cafe", arts_path
 end
 
 # Each Art

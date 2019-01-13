@@ -59,12 +59,12 @@
 
 <div><p class="text-left page-top">Area</p></div>
  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-            <div class="button tiny"><%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
+            <div class="button small button-color1"><%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
             <%= tag.count %></div>
             <% end %>
 <div><p class="text-left page-top">Coffee</p></div>
 <% tag_cloud(@beans, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-            <div class="button tiny alert"><%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
+            <div class="button small alert"><%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
             <%= tag.count %></div>
             <% end %>
 </div>

@@ -2,7 +2,7 @@ $white: #fefefe;
 
 // COMMON
 :root{
-  font-size: calc(0.5em + 0.7vw);
+  font-size: calc(0.55em + 0.7vw);
 }
 
 // Breakpoints
@@ -43,7 +43,7 @@ $white: #fefefe;
     color: #f66a16;
     text-transform: uppercase;
     @include breakpoint(smallonly){
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
     @include breakpoint(mediumandup){
       font-size: 2rem;
@@ -57,7 +57,14 @@ $white: #fefefe;
   }
 }
 
+.text {
+  letter-spacing: 1.6px;
+  line-height: 180%;
+  margin: 0px 15px;
+  text-align: left;
+}
 
+// Foundation
 /* Orbits */
 
 .docs-example-orbit-slide {
@@ -87,6 +94,8 @@ $white: #fefefe;
   margin-bottom: 30px;
 }
 
+// Content
+// layouts
 /* Footer */
 .footer {
   background-color: #232323;
@@ -102,7 +111,7 @@ $white: #fefefe;
 .footer a {
   display: block;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.8em;
+  font-size: 1.0em;
 }
 
 .footer a span {
@@ -119,236 +128,11 @@ $white: #fefefe;
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Table */
-.this {
-  font-size: 11px;
-}
-
-.this td {
-  background-color: #f1f1f1;
-  width: 100px;
-}
-
-.this th {
-  text-align: left;
-}
-
-
 /* Breadcrumbs */
 
 .breadcrumbs {
   float: left;
   margin-bottom: 100px;
-}
-
-/* Article Title */
-.maint {
-    font-family: 'Montserrat';
-    letter-spacing: 0px;
-    font-weight: 700;
-    background-color: #ffffff;
-    padding: 10px; 
-}
-
-.pagetitle {
-  background: #eae6dd;
-  margin-top: 45px;
-}
-
-.page-top {
-  margin-top: 45px;
-}
-
-/* Menu-text */
-.logo {
-  color: white;
-}
-
-/* Map-description */
-.map-des {
-  padding-top: 20px;
-}
-
-/* Interview */
-.art-fukidashi h2 {
-  letter-spacing: 1px;
-  line-height: 160%;
-  font-weight: bold;
-  margin-bottom: 16px;
-}
-
-.art-content h4 {
-  letter-spacing: 1px;
-  line-height: 180%;
-}
-
-.art-profcontent {
-  font-size: 10px;
-  letter-spacing: 1px;
-    line-height: 160%;
-}
-
-.int-side {
-  padding: 0 20px;
-  margin: 0 20px;
-  background: #fff;
-  border: 1px solid #E6E6E6;
-  text-align: left;
-}
-
-.int-image {
-  padding: 0 20px;
-}
-
-.int-staff {
-  font-family: 'aleoreg';
-  color: #880000;
-  letter-spacing: 1px;
-  margin: 8px 0;
-}
-
-.int-name {
-  font-weight: bold;
-  letter-spacing: 2px;
-  line-height: 160%;
-  margin-bottom: 4px;
-}
-
-.entry-title {
-    background: #fff;
-    padding: 8px;
-    border-bottom: 1px solid #E6E6E6;
-    text-align: left;
-    height: 108px;
-}
-
-.cat-name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 8px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  line-height: 140%;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-}
-
-/* Menu */
-
-.menu-title::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    margin-left: -75px;
-    width: 150px;
-    height: 1px;
-    background: rgba(68, 68,68, 0.6)
-}
-
-.menu-title {
-    position: relative;
-    margin-bottom: 10px;
-    margin-top: 40px;
-    padding-bottom: 10px;
-    /* font-size: 22px; */
-    size: 2.2rem;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-align: center;
-    line-height: 1.4;
-    letter-spacing: -0.04em;
-    word-break: break-all;
-    vertical-align: bottom;
-    display: block;
-}
-
-.menu-content {
-  font-size: 1.2rem;
-  letter-spacing: 0.1rem;
-}
-
-.menu-contents {
-  font-size: 1.3rem;
-}
-
-.title-bar-title {
-  margin: 0 auto;
-}
-
-/* index */
-.entry-title {
-    background: #fff;
-    padding: 16px;
-    border-bottom: 1px solid #E6E6E6;
-    height: 132px;
-}
-
-.card {
-  margin-top: 20px;
-}
-
-.card-section a {
-  color: black;
-}
-
-.css1 { font-size: 0.8em; }
-.css2 { font-size: 0.8em; }
-.css3 { font-size: 1.0em; }
-.css4 { font-size: 1.0em; }
-
-th.tag a {
-  color: black;
-}
-
-.small-title {
-  text-align: left;
-}
-
-.readmore {
-    margin-top: 5px;
-    z-index: 999999;
-    background-color: #FFF;
-    display: inline-block;
-    float: right;
-    padding-left: 10px;
-}
-
-.readmore a {
-  font-size: 11px;
-  letter-spacing: 0.1500em;
-  font-style: italic;
-  color: #222;
-}
-
-.big-title {
-    border-bottom: solid 1px #232323;
-    display: block;
-    padding-top: 10px;
-    margin-bottom: 15px;
-}
-
-.ranking-number {
- margin-top: 30px;
-}
-
-.ranking-image {
-  width: 20vh;
-}
-
-.ranking-block {
-  display: block;
-  float: none;
-  background-color: white;
-  height: 90px;
-}
-
-h6.ranking-title {
-  color: black;
-  font-size: 14px;
-}
-
-h6.ranking-title a:hover{
-  color: white;
 }
 
 .side-title {
@@ -435,10 +219,237 @@ $sidelines-double-line-spacing: 0.5em !default;
   );
 }
 
+// Arts
+/* Table */
+.this {
+  font-size: 11px;
+}
+
+.this td {
+  background-color: #f1f1f1;
+  width: 100px;
+}
+
+.this th {
+  text-align: left;
+}
+
+.url a {
+  color: #3c3c35;
+}
+
+/* Article Title */
+.maint {
+    font-family: 'Montserrat';
+    letter-spacing: 0px;
+    font-weight: 700;
+    background-color: #ffffff;
+    padding: 10px; 
+}
+
+.pagetitle {
+  background: #eae6dd;
+  margin-top: 45px;
+}
+
+.page-top {
+  margin-top: 45px;
+}
+
+/* Menu-text */
+.logo {
+  color: white;
+}
+
+/* Map-description */
+.map-des {
+  padding-top: 20px;
+}
+
+/* Interview */
+.art-fukidashi h2 {
+  letter-spacing: 1px;
+  line-height: 160%;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.art-profcontent {
+  font-size: 10px;
+  letter-spacing: 1px;
+    line-height: 160%;
+}
+
+.int-side {
+  padding: 0 20px;
+  margin: 0 20px;
+  background: #fff;
+  border: 1px solid #E6E6E6;
+  text-align: left;
+}
+
+.int-image {
+  padding: 0 20px;
+}
+
+.int-staff {
+  font-family: 'aleoreg';
+  color: #880000;
+  letter-spacing: 1px;
+  margin: 8px 0;
+}
+
+.int-name {
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 160%;
+  margin-bottom: 4px;
+}
+
+.entry-title {
+    background: #fff;
+    padding: 8px;
+    border-bottom: 1px solid #E6E6E6;
+    text-align: left;
+    height: 108px;
+}
+
+.cat-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 140%;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+/* Menu */
+
+.menu-title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -75px;
+    width: 150px;
+    height: 1px;
+    background: rgba(68, 68,68, 0.6)
+}
+
+.menu-title {
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    /* font-size: 22px; */
+    size: 2.2rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: -0.04em;
+    word-break: break-all;
+    vertical-align: bottom;
+    display: block;
+}
+
+.menu-content {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  font-style: oblique;
+}
+
+.menu-contents {
+  font-size: 1.1rem;
+  font-family: monospace;
+}
+
+.title-bar-title {
+  margin: 0 auto;
+}
+
+/* index */
+.entry-title {
+    background: #fff;
+    padding: 16px;
+    border-bottom: 1px solid #E6E6E6;
+    height: 132px;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.card-section a {
+  color: black;
+}
+
+.css1 { font-size: 0.8em; }
+.css2 { font-size: 0.8em; }
+.css3 { font-size: 1.0em; }
+.css4 { font-size: 1.0em; }
+
+th.tag a {
+  color: black;
+}
+
+.small-title {
+  text-align: left;
+}
+
+.readmore {
+    margin-top: 5px;
+    z-index: 999999;
+    background-color: #FFF;
+    display: inline-block;
+    float: right;
+    padding-left: 10px;
+}
+
+.readmore a {
+  font-size: 11px;
+  letter-spacing: 0.1500em;
+  font-style: italic;
+  color: #222;
+}
+
+.big-title {
+    border-bottom: solid 1px #232323;
+    display: block;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+.ranking-number {
+ margin-top: 30px;
+}
+
+.ranking-image {
+  width: 20vh;
+}
+
+.ranking-block {
+  display: block;
+  float: none;
+  background-color: white;
+  height: 90px;
+}
+
+h6.ranking-title {
+  color: black;
+  font-size: 14px;
+}
+
+h6.ranking-title a:hover{
+  color: white;
+}
+
 #login a {
   color: black;
 }
 
+/* Google map */
 #map {
   height: 400px;
   margin-left:auto;
@@ -452,3 +463,6 @@ li.tabs-title a {
   font-size: 0.95rem;
 }
 
+.button-color1 {
+  background-color: #1750d2;
+  }

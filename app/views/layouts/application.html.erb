@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Coffee Delivery" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "SELECT COFFEE" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -13,10 +13,8 @@
   </head>
   <body>
   
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
+    <span id="notice"><%= flash[:notice] %></span>
+    <span id="alert"><%= flash[:alert] %></span>
   
   <div class="content">
 
