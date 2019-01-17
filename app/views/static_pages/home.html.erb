@@ -11,7 +11,7 @@
 <% @art.each do |art| %>
 <div class="cell">
 <div class="card">
-  <%= image_tag art.images[0].url %>
+  <%= image_tag art.mimages[0].url %>
   <div class="card-section">
   <%= link_to art_path(art) do %>
   <h4><%= art.storename %></h4>
@@ -45,7 +45,7 @@
 
 <h6 class="text-left ranking-number">No.<%= "#{i+1}" %></h6>
 <div class="ranking-block">
-<div class="ranking-image float-left"><%= image_tag art.images[0].url %></div>
+<div class="ranking-image float-left"><%= image_tag art.mimages[0].url %></div>
 <div class="ranking-text">
   <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y/%m/%d") %></p>
 <%= link_to art_path(art) do %>

@@ -1,4 +1,12 @@
-<div class="cell">
-<h2 class="maint">Gallery</h2>
-写真のギャラリー・インスタ公式から最新の写真を反映できる？
+<div class="cell"><h2 class="maint">Gallery</h2></div>
+<div class="featured-image-block-grid">
+  <div class="featured-image-block-grid-header small-10 medium-8 large-7 columns text-center">
+  </div>
+  <div class="row large-up-4 small-up-2">
+     <% @art.mimages.each_with_index do |art, index| %>
+  	<div class="featured-image-block column">
+     <%= image_tag(art.url) %>
+     </div>
+     <% end %>
+  </div>
 </div>

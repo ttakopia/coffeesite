@@ -7,8 +7,8 @@ class Art < ApplicationRecord
   has_many :users, through: :favorites
 
   accepts_nested_attributes_for :menus, :brews, :elsecoffees, :beans, allow_destroy: true
-	mount_uploaders :images, ImageUploader
-	serialize :images, JSON
+	mount_uploaders :mimages, ImageUploader
+  serialize :mimages
 	#geocoded_by :address
 	#after_validation :geocode, if: :address_changed?
 	acts_as_taggable # Alias for acts_as_taggable_on :tags

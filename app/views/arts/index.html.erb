@@ -13,7 +13,7 @@
 <% @art.each do |art| %>
 <div class="cell">
 <div class="card">
-  <%= image_tag art.images[0].url %>
+  <%= image_tag art.mimages[0].url %>
   <div class="card-section">
   <%= link_to art_path(art) do %>
   <h4><%= art.storename %></h4>
