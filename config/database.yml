@@ -30,6 +30,6 @@ production:
   encoding: utf8
   database: coffeesite_production
   username: root
-  password: takopia0316
-  host: jakarta-db-mysql.cxk8jmt9re2a.ap-southeast-1.rds.amazonaws.com
+  password: <%= ENV["RAILS_DATABASE_PASSWORD"] %>
+  host: <%= ENV["RAILS_DATABASE_HOST"] %>
   port: 3306
