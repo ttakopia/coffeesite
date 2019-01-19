@@ -31,5 +31,5 @@ production:
   database: coffeesite_production
   username: root
   password: <%= ENV["RAILS_DATABASE_PASSWORD"] %>
-  host: <%= ENV["RAILS_DATABASE_HOST"] %>
+  host: jakarta-db-mysql.cxk8jmt9re2a.ap-southeast-1.rds.amazonaws.comta
   port: 3306
