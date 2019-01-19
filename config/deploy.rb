@@ -46,6 +46,8 @@ set :rbenv_ruby, '2.4.2'
 #出力するログのレベル。
 set :log_level, :debug
 
+after :publishing, :restart
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
@@ -78,8 +80,6 @@ end
 #  end
 
 #  after :deploy, "deploy:seed"
-
-  after :publishing, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
