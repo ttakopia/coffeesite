@@ -1,11 +1,15 @@
-<%= provide(:title, '@art.title') %>
+<%= provide(:title, 'Cafe') %>
 
 <span class="breadcrumbs">
 <% breadcrumb :arts %>
 </span>
 
 </br></br>
-<h2 class="maint">CAFE</h2>
+<% if request.path.split('/').last.split('.').first == "index" %>
+    <h2 class="maint">CAFE</h2>
+    <% else %>
+      <h2 class="maint"><%= CGI.unescape(request.path.split('/').last.split('.').first.to_s) %></h2>
+    <% end %>
 
 <div class="grid-x page-top grid-margin-x">
 <div class="cell small-12 medium-9 large-9">

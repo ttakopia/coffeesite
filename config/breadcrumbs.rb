@@ -5,12 +5,13 @@ end
 
 # Art list
 crumb :arts do
-   link "Cafe", arts_path
+   link "Cafe", index_path
+   
 end
 
 # Each Art
 crumb :art do |art|
-   link art.storename, art_path(art)
+   link art.storename, index_path(art)
    parent :arts
 end
 
