@@ -15,11 +15,9 @@
 <h2><%= @art.storename %></h2>
 </div>
 
-<% if false %>
 <span id="like-of-<%= @art.id %>">
   <%= render partial: 'favorites/favorite', locals: { art: @art, favorites: @favorites } %>
   </span>
-<% end %>
 
 <div>
 <ul class="tabs" data-tabs id="example-tabs">
