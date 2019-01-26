@@ -1,52 +1,53 @@
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&callback=initMap" async defer>
-</script>
-
-<!--マップ-->
 <div id="map"></div>
+<script>
+function initMap() {
 
-<!-- js部分 -->
-<script type="text/javascript">
-    function initMap() {
+    var addresses = <%= @arr.to_json.html_safe %>;
 
-      //初期表示位置
-      var latlng = new google.maps.LatLng(36.30, 139.5);
-      //デザイン
-      var styles = [
-           {
-            stylers: [
-             { "saturation": -95 },
-             { "lightness": -20 }
-            ]
-           }
-          ];
+    var latlng = []; //緯度経度の値をセット
+    var marker = []; //マーカーの位置情報をセット
+    var myLatLng; //地図の中心点をセット用
+    var geocoder;
+    geocoder = new google.maps.Geocoder();
 
-      var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 9,
-          styles: styles,
-          center: latlng
-      });
-      var transitLayer = new google.maps.TransitLayer();
-      transitLayer.setMap(map);
+    var map = new google.maps.Map(document.getElementById('map'));//地図を作成する
 
-      //複数マーカー ここから
-      <% @art.each do |art| %>
-      (function(){
-        var contentString = "住所：<%= art.address %>"; 
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
+    geo(aftergeo);
 
-        var marker = new google.maps.Marker({
-            position:{lat: <%= art.latitude %>, lng: <%= art.longitude %>},
-            map: map,
-            title: contentString
-        });
+    function geo(callback){
+        var cRef = addresses.length;
+        for (var i = 0; i < addresses.length; i++) {
+            (function (i) { 
+                geocoder.geocode({'address': addresses[i]}, 
+                    function(results, status) { // 結果
+                        if (status === google.maps.GeocoderStatus.OK) { // ステータスがOKの場合
+                            latlng[i]=results[0].geometry.location;// マーカーを立てる位置をセット
+                            marker[i] = new google.maps.Marker({
+                                position: results[0].geometry.location, // マーカーを立てる位置を指定
+                                map: map // マーカーを立てる地図を指定
+                            });
+                        } else { // 失敗した場合
+                        }//if文の終了。ifは文なので;はいらない
+                        if (--cRef <= 0) {
+                            callback();//全て取得できたらaftergeo実行
+                        }
+                    }//function(results, status)の終了
+                );//geocoder.geocodeの終了
+            }) (i);
+        }//for文の終了
+    }//function geo終了
 
-        marker.addListener('click', function() {
-          infowindow.open(map, marker, content);
-        });
-       })();
-      <% end %>
-      //複数マーカー ここまで  
-  }
+    function aftergeo(){
+        myLatLng = latlng[0];//最初の住所を地図の中心点に設定
+        var opt = {
+            center: myLatLng, // 地図の中心を指定
+            zoom: 16 // 地図のズームを指定
+        };//地図作成のオプションのうちcenterとzoomは必須
+        map.setOptions(opt);//オプションをmapにセット
+    }//function aftergeo終了
+
+};//function initMap終了
+
 </script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&callback=initMap"
+async defer></script>

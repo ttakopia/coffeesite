@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
   def home
   	@tags = Art.tag_counts_on(:tags).order('count DESC')
     @beans = Art.tag_counts_on(:coffeebeans).order('count DESC')
+    @arr = Art.pluck(:address)
     if params[:tag]
     @art = Art.tagged_with(params[:tag])
     @art = Art.tagged_with(params[:coffeebean])
