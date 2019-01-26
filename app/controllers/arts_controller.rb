@@ -6,6 +6,7 @@ class ArtsController < ApplicationController
     @tags = Art.tag_counts_on(:tags).order('count DESC')
     if params[:tag]
     @art = Art.tagged_with(params[:tag])
+    @arr = @art.pluck(:address)
   else
     @art = Art.all
   end

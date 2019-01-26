@@ -36,6 +36,13 @@
   </div>
   <% end %>
   </div>
+
+
+  <% if request.path.split('/').last.split('.').first == "index" %>
+    <% else %>
+     <div><h2 class="maint">Access Map</h2></div>
+     <%= render 'maps' %>
+    <% end %>
 </div>
 
 <div class="cell medium-3 large-3">
