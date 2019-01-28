@@ -1,13 +1,12 @@
 <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
   <button class="menu-icon" type="button" data-toggle="example-menu"></button>
-  <span class="title-bar-title"><%= link_to 'COFFEE SEEKER', root_path %></span>
+  <span class="title-bar-title"><%= image_tag("coffeeseeker.PNG", :size => "30x30", :alt => "アイコン") %><%= link_to 'COFFEE SEEKER', root_path %></span>
 </div>
 
 <div class="top-bar" id="example-menu">
 
-  <ul class="menu top-bar-left">
-  <li class="menu-text logo hide-for-small-only"><%= link_to 'COFFEE SEEKER', root_path %></li>
-    </ul>
+
+  <span class="top-bar-left menu-text logo hide-for-small-only"><%= image_tag("coffeeseeker.PNG", :size => "30x30", :alt => "アイコン") %><%= link_to 'COFFEE SEEKER', root_path %></span>
 
   <div class="top-bar-right">
     <ul class="dropdown menu" data-dropdown-menu>
