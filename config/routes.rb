@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  
-  get 'oauths/oauth'
-
-  get 'oauths/callback'
-
+ 
   resources :arts do
     resources :favorites, only: [:create, :destroy]
   end
@@ -24,7 +20,8 @@ Rails.application.routes.draw do
   get 'user_sessions/new'
   get 'user_sessions/create'
   get 'user_sessions/destroy'
-
+  
+  
   get 'index',  to: 'arts#index'
   get 'new', 	  to: 'arts#new'
   get 'tags/:tag', to: 'arts#index', as: :tag

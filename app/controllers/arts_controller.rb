@@ -1,6 +1,6 @@
 class ArtsController < ApplicationController
   before_action :set_ranking_data
-  skip_before_action :require_login,only: [:show, :index]
+  skip_before_action :require_login,only: [:show, :index, :destroy]
 
   def index
     @tags = Art.tag_counts_on(:tags).order('count DESC')
@@ -39,6 +39,16 @@ class ArtsController < ApplicationController
     authorize! @art
     @art = Art.find(params[:id])
   end
+
+  def destroy
+    authorize! @art
+    @art = Art.find(params[:id])
+    @art.destroy
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: 'Article was successfully destroyed.' }
+      format.json { head :no_content }
+  end
+end
 
   def update
   @art = Art.find(params[:id])

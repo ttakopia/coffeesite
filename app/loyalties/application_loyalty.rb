@@ -31,6 +31,6 @@ class ApplicationLoyalty
   end
 
   def destroy?
-    false
+    delete?
   end
 end

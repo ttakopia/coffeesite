@@ -81,3 +81,9 @@
       </div>
       <!-- end of tab -->	
     </div>
+
+    <% if current_user && current_user.admin?  %>
+     <%= link_to 'Edit', edit_art_path(@art) %>
+     <%= link_to "削除する", art_path(@art), method: :delete %>
+     <% else %>
+     <% end %>
