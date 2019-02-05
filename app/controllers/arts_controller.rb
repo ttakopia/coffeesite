@@ -1,5 +1,5 @@
 class ArtsController < ApplicationController
-  before_action :set_ranking_data
+  # before_action :set_ranking_data
   skip_before_action :require_login,only: [:show, :index, :destroy]
 
   def index

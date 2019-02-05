@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-	 before_action :set_ranking_data
+	 # before_action :set_ranking_data
    skip_before_action :require_login
 
   def home
