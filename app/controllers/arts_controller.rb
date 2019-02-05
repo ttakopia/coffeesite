@@ -7,6 +7,7 @@ class ArtsController < ApplicationController
     if params[:tag]
     @art = Art.tagged_with(params[:tag])
     @arr = @art.pluck(:address)
+    @name = @art.pluck(:storename)
   else
     @art = Art.all
   end

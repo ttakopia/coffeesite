@@ -36,7 +36,7 @@
 </div>
 
 <div class="cell medium-3 large-3">
-
+<% if false %> #コメントアウト
 <h3 class="side-title">Ranking(PV数)</h3> 
   <% @ranks.each.with_index do |art, i| %>
 
@@ -54,6 +54,7 @@
   <%= render partial: 'favorites/favorite', locals: { art: art, favorites: @favorites } %></span>
 </div>
  </div>
+  <% end %>
   <% end %>
 
 <div><p class="text-left page-top">Area</p></div>
