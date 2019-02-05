@@ -15,7 +15,7 @@ class ArtsController < ApplicationController
 
   def show
   	@art = Art.find(params[:id])
-    REDIS.zincrby "arts/", 1, "#{@art.id}"
+   # REDIS.zincrby "arts/", 1, "#{@art.id}"
   end
 
   def set_ranking_data
