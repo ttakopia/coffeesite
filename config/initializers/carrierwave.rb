@@ -11,5 +11,3 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'bucket-name-coffeeseeker'
   config.asset_host = 'https://s3.amazonaws.com/bucket-name-coffeeseeker'
   end
-
-end
