@@ -44,7 +44,8 @@ gem 'gretel'
 gem 'sorcery'
 gem 'foundation-icons-sass-rails'
 gem 'seed-fu', '~> 2.3'
-gem 'banken'  #
+gem 'banken'  #管理人Gem
+gem 'fog-aws' #Carrierwave+S3用
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
