@@ -1,4 +1,7 @@
 CarrierWave.configure do |config|
+  if Rails.env.development? || Rails.env.test?
+  config.storage = :file 
+  else
   config.storage :fog
   config.fog_provider = 'fog/aws' # 追加
   config.fog_credentials = {
@@ -11,3 +14,4 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'bucket-name-coffeeseeker'
   config.asset_host = 'https://s3.amazonaws.com/bucket-name-coffeeseeker'
   end
+end
