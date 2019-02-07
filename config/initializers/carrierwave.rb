@@ -3,6 +3,7 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
+  if Rails.env.production?
   config.fog_provider = 'fog/aws' # 追加
   config.fog_credentials = {
     provider: 'AWS',
@@ -15,4 +16,7 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'bucket-name-coffeeseeker'
   config.fog_public = false 
   config.storage = :fog
+else
+   config.storage :file
+end
 end
