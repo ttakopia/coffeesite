@@ -3,7 +3,6 @@
 function initMap() {
 
     var addresses = <%= @arr.to_json.html_safe %>;
-    var infoWindow = [];
     var name = <%= @name.to_json.html_safe %>;
     var latlng = []; //緯度経度の値をセット
     var marker = []; //マーカーの位置情報をセット
@@ -26,15 +25,10 @@ function initMap() {
                             marker[i] = new google.maps.Marker({
                                 position: results[0].geometry.location, // マーカーを立てる位置を指定
                                 map: map, // マーカーを立てる地図を指定
-                                 label: {
-                                    text: name,         //ラベル文字
-                                    color: '#ff0000',          //ラベル文字の色
-                                           fontFamily: 'sans-serif',  //フォント 
-                                           fontWeight: 'bold',        //フォントの太さ 
-                                           fontSize: '14px'           //フォントのサイズ 
-                                        } 
-                                                                });
-                        } else { // 失敗した場合
+                                                        });
+                                
+                        }
+                         else { // 失敗した場合
                         }//if文の終了。ifは文なので;はいらない
                         if (--cRef <= 0) {
                             callback();//全て取得できたらaftergeo実行
@@ -53,7 +47,6 @@ function initMap() {
         };//地図作成のオプションのうちcenterとzoomは必須
         map.setOptions(opt);//オプションをmapにセット
     }//function aftergeo終了
-
 };//function initMap終了
 
 </script>

@@ -1,6 +1,7 @@
 <div id="map"></div> 
 <script type="text/javascript">
 function initMap(latlng) {
+  var name = <%= @art.storename.to_json.html_safe %>;
   var map = new google.maps.Map(document.getElementById('map'), {
     center: latlng,
     zoom: 16
@@ -10,7 +11,14 @@ function initMap(latlng) {
     position: latlng,
     map: map
   });
+  var infowindow = new google.maps.InfoWindow({
+    content: name
+  });
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
 }
+
 
 function getLatLng() {
   var geocoder = new google.maps.Geocoder();
