@@ -1,54 +1,106 @@
 <div id="map"></div>
 <script>
-function initMap() {
+$(window).load(function() {
+        var map;
+        var bounds
+        var locationCount;
+        var infoWindow = null;
+        // The array of locations to mark on the map.
+        // Add as many locations as necessary.
+        var locations = <%= @arr.to_json.html_safe %>;
+        var names = <%= @ars.to_json.html_safe %>;
+        // Init the map
+        function init() {
+            // Customize look of the map.
+            // https://www.mapbuildr.com/
+           var mapOptions = {
+                zoom: 14,
+                zoomControl: true,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.SMALL,
+                },
+                disableDoubleClickZoom: true,
+                mapTypeControl: false,
+                panControl: false,
+                scaleControl: false,
+                scrollwheel: false,
+                streetViewControl: false,
+                draggable : true,
+                overviewMapControl: false
+            }
+            var mapElement = document.getElementById('map');
+            map = new google.maps.Map(mapElement, mapOptions);
+           
+            var geocoder = new google.maps.Geocoder();
+            bounds = new google.maps.LatLngBounds();
+            locationCount = 0;
+            // Init InfoWindow and leave it
+            // for use when user clicks marker
+            infoWindow = new google.maps.InfoWindow( { content: "Loading content..." } );
+            // Loop through locations and set markers
+            for (i = 0; i < locations.length; i++) {
+                var address = locations[i];
+                //Get latitude and longitude from address
+                geocoder.geocode( {'address': address}, onGeocodeComplete(i));
+            }
+            // Re-center map on window resize
+            google.maps.event.addDomListener(window, 'resize', function() {
+                var center = map.getCenter();
+                google.maps.event.trigger(map, "resize");
+                map.setCenter(center);
+            });
+        } // END init()
 
-    var addresses = <%= @arr.to_json.html_safe %>;
-    var name = <%= @name.to_json.html_safe %>;
-    var latlng = []; //緯度経度の値をセット
-    var marker = []; //マーカーの位置情報をセット
-    var myLatLng; //地図の中心点をセット用
-    var geocoder;
-    geocoder = new google.maps.Geocoder();
-
-    var map = new google.maps.Map(document.getElementById('map'));//地図を作成する
-
-    geo(aftergeo);
-
-    function geo(callback){
-        var cRef = addresses.length;
-        for (var i = 0; i < addresses.length; i++) {
-            (function (i) { 
-                geocoder.geocode({'address': addresses[i]}, 
-                    function(results, status) { // 結果
-                        if (status === google.maps.GeocoderStatus.OK) { // ステータスがOKの場合
-                            latlng[i]=results[0].geometry.location;// マーカーを立てる位置をセット
-                            marker[i] = new google.maps.Marker({
-                                position: results[0].geometry.location, // マーカーを立てる位置を指定
-                                map: map, // マーカーを立てる地図を指定
-                                                        });
-                                
-                        }
-                         else { // 失敗した場合
-                        }//if文の終了。ifは文なので;はいらない
-                        if (--cRef <= 0) {
-                            callback();//全て取得できたらaftergeo実行
-                        }
-                    }//function(results, status)の終了
-                );//geocoder.geocodeの終了
-            }) (i);
-        }//for文の終了
-    }//function geo終了
-
-    function aftergeo(){
-        myLatLng = latlng[0];//最初の住所を地図の中心点に設定
-        var opt = {
-            center: myLatLng, // 地図の中心を指定
-            zoom: 14 // 地図のズームを指定
-        };//地図作成のオプションのうちcenterとzoomは必須
-        map.setOptions(opt);//オプションをmapにセット
-    }//function aftergeo終了
-};//function initMap終了
+        // Triggered as the geocode callback
+        function onGeocodeComplete(i) {
+            // Callback function for geocode on response from Google.
+            // We wrap it in 'onGeocodeComplete' so we can send the
+            // location index through to the marker to establish
+            // content.
+            var geocodeCallBack = function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    // The HTML content for the InfoWindow.
+                    // Includes a form to allow the user to
+                    // get directions.
+                    var windowContent = names[i];
+                    // Create the marker for the location
+                    // We use 'html' key to attach the
+                    // InfoWindow content to the marker.
+                    var marker = new google.maps.Marker({
+                        position: results[0].geometry.location,
+                        map: map,
+                        html: windowContent
+                    });
+                    // Set event to display the InfoWindow anchored
+                    // to the marker when the marker is clicked.
+                    google.maps.event.addListener( marker, 'click', function() {
+                        // Updates the InfoWindow content with
+                        // the HTML held in the marker ('this').
+                        infoWindow.setContent(this.html);
+                        infoWindow.open(map, this);
+                    });
+                    // Add this marker to the map bounds
+                    extendBounds(results[0].geometry.location);
+                } else {
+                    window.log('Location geocoding has failed: ' + google.maps.GeocoderStatus);
+                }
+            } // END geocodeCallBack()
+            return geocodeCallBack;
+        } // END onGeocodeComplete()
+        // Establishes the bounds for all the markers
+        // then centers and zooms the map to show all.
+        function extendBounds(latlng) {
+            ++locationCount;
+            bounds.extend(latlng);
+            if (locationCount == locations.length) {
+                map.fitBounds(bounds);
+            }
+        } // END extendBounds()
+        init();
+        
+    }); // END $(window).load
 
 </script>
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&callback=initMap"
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&sensor=false&extension=.js"
 async defer></script>
