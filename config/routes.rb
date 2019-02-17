@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  resources :memos
   resources :arts do
     resources :favorites, only: [:create, :destroy]
   end
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get  'about',  to: 'static_pages#about'
   get  '/help',  to: 'static_pages#help'
+  get  'column',  to: 'static_pages#column'
 
   get  'login'  => 'user_sessions#new',     :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
   get 'user_sessions/create'
   get 'user_sessions/destroy'
   
-  
+  get 'memo',  to: 'memos#index'
   get 'index',  to: 'arts#index'
   get 'new', 	  to: 'arts#new'
   get 'tags/:tag', to: 'arts#index', as: :tag

@@ -46,6 +46,8 @@ gem 'foundation-icons-sass-rails'
 gem 'seed-fu', '~> 2.3'
 gem 'banken'  #管理人Gem
 gem 'fog-aws' #Carrierwave+S3用
+gem 'redcarpet'#Markdown
+gem 'coderay' #シンタックスハイライト
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -69,6 +71,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
+  gem 'pry-rails'#デバック
 end
 
 group :production, :staging do

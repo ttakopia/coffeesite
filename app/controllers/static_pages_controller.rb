@@ -23,6 +23,9 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def columns
+  end
+
   def help
   end
 end

@@ -1,0 +1,82 @@
+<script async src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script async src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.10/vue.js'></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
+<script async src="https://sdk.amazonaws.com/js/aws-sdk-2.355.0.min.js"></script>
+
+<%= form_for @memo do |f| %>
+    <label for="upload-file">
+      <input type="file" id="upload-file">
+    </label>
+    <div class="grid-x" id='editor'>
+      <textarea name="memo[content]" id="markdown" class="textarea text-left cell large-6 form-control" style="resize: none;" rows="20" v-model='input' debounce='50'></textarea>
+      <div class="text-left cell large-6 preview border p-0">
+        <div v-html='input | marked' id="marked-preview"></div>
+      </div>
+    </div>
+    <div class="text-right">
+      <%= f.submit "投稿する", :class => "btn btn-info" %>
+    </div>
+  <% end %>
+
+<script>
+  $(window).on('load', function() {
+    var renderer = new marked.Renderer()
+    renderer.code = function(code, language) {
+      return '<pre'+'><code class="hljs">' + hljs.highlightAuto(code).value + '</code></pre>';
+    };
+
+    marked.setOptions({
+      renderer: renderer,
+      langPrefix: '',
+      breaks : true
+    });
+    new Vue({
+      el: '#editor',
+      data: {
+        input: '<%== j @memo.content %>',
+      },
+      filters: {
+        marked: marked,
+      },
+    });
+  });
+$(function() {
+  $("#upload-file").on('change', function() {
+    var file = $("#upload-file").prop("files")[0];
+    var timestamp = new Date().getTime();
+    var filename = file.name.split('.')[0] + timestamp + ".jpg";
+    var aaa = document.getElementById('upload-file');
+
+    s3_client().putObject({Bucket: "markdown-coffee", Key: filename, ContentType: file.type, Body: file, ACL: 'public-read-write'},
+    function(err, data){
+      if(data !== null){
+        // 画像表示
+        var textarea = $('#markdown');
+        var sentence = textarea.val();
+        var word = `<img src=https://s3-ap-southeast-1.amazonaws.com/markdown-coffee/${filename}>`;
+
+        // 画像のURLは、自分で決めた region, Bucket Name によって変わります。適宜書き換えてください
+        // var src = aaa.src;
+        sentence = sentence + '\n' + word;
+        textarea.val(sentence);
+        $("#marked-preview").html(marked(sentence))
+         alert("アップロード成功");
+      } else {
+        alert("アップロード失敗かもしれない");
+      }
+    });
+  });
+  function s3_client() {
+     // 自分の設定した region に書き換えてください。ここでは東京の region を指定しています
+     AWS.config.region = 'ap-southeast-1'; // リージョン
+     AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'ap-southeast-1:1588d149-0cd2-4470-a2eb-433f776e58e6'});
+     AWS.config.credentials.get(function(err) {
+        if (!err) {
+            console.log("Cognito Identify Id: " + AWS.config.credentials.identityId);
+        }
+    });
+     return new AWS.S3();
+  };  
+});
+</script>

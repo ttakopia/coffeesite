@@ -7,10 +7,10 @@
     <title><%= content_for?(:title) ? yield(:title) : "COFFEE SEEKER" %></title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => false %>
     <%= favicon_link_tag 'coffeeseeker.ico' %>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"></script>
     <%= csrf_meta_tags %>
-<script src="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"></script>
   </head>
   <body>
   

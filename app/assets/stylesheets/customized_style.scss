@@ -488,3 +488,40 @@ li.tabs-title a {
     }
   }
 }
+
+/* Column */
+
+.titlea {
+  position:relative;
+  padding-left:30px;
+  border-bottom:2px solid #ccc;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 38px;
+  text-align: left;
+}
+
+.titlea:before {
+  content:''; 
+  border-radius:30px;
+  -webkit-border-radius:30px;
+  -moz-border-radius:30px; 
+  height:12px; 
+  width:12px; 
+  display:block; 
+  position:absolute; 
+  top:13px; 
+  left:5px; 
+  background-color:#7b5544;
+  box-shadow: 0 0 2px 2px rgba(255,255,255,0.2) inset
+}
+
+.stringa {
+  line-height: 2;
+  padding: 20px 0;
+  float: left;
+  clear: both;
+}
+.imagea {
+  clear: both;
+}
