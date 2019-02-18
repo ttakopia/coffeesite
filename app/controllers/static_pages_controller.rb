@@ -21,6 +21,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+    @memo = Memo.find(1)
   end
 
   def columns

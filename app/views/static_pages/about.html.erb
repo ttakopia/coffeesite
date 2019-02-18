@@ -1,7 +1,6 @@
 <%= provide(:title, 'About') %>
 </br>
-<div class="cell"><h2 class="maint">ABOUT</h2></div>
-<div class="text">
-		COFFEE SEEKERは世界中の美味しいコーヒー・カフェを紹介するメディアです。記事では主にスペシャリティーコーヒーを提供するカフェを中心に紹介し、カフェの拘りのコーヒー豆を詳細に説明していきます。地域、コーヒー豆別に検索することができ、コーヒー愛好家（COFFEE SEEKER）向けのサイトです。
-		更に！気に入ったカフェがあれば、お気に入り機能で店のイベント情報や新作メニューなどの情報がニュースフィードやE-mailで確認することができます！※随時追加。	
+<div class="cell"><h2 class="maint">About</h2></div>
+<div class="cell">
+<div class="text-left"><%= markdown(@memo.content) %></div>
 </div>
