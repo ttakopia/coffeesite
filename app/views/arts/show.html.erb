@@ -1,4 +1,4 @@
-<%= provide(:title, '@art.title') %>
+<% set_meta_tags title: @art.storename, description: @art.content %>
 
 <div class="breadcrumbs">
 <% breadcrumb :art, @art %>

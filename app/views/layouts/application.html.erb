@@ -3,20 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="P_5yZ2xxMu0mcHqSUI9_Pr1quR7gm-iKIPQJPpDttro" />
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-9496679897493996",
-          enable_page_level_ads: true
-     });
-</script>
-    <title><%= content_for?(:title) ? yield(:title) : "COFFEE SEEKER" %></title>
-
+    <%= render 'layouts/google' %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => false %>
     <%= favicon_link_tag 'coffeeseeker.ico' %>
     <script src="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"></script>
+    <%= display_meta_tags(default_meta_tags) %>
     <%= csrf_meta_tags %>
   </head>
   <body>

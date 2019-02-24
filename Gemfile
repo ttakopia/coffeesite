@@ -35,19 +35,20 @@ gem 'jbuilder', '~> 2.5'
 gem 'foundation-rails', '6.4.3.0'
 gem 'autoprefixer-rails'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-gem 'carrierwave'
-gem 'mini_magick'
-gem 'acts-as-taggable-on', '~> 6.0'
-gem 'redis'
-gem 'cocoon'
-gem 'gretel'
-gem 'sorcery'
+gem 'carrierwave' #imgアップロード
+gem 'mini_magick' #imgサイズ変更
+gem 'acts-as-taggable-on', '~> 6.0' #タグ
+gem 'redis' #PVランキング
+gem 'cocoon' #Nest Form
+gem 'gretel' #パンくずリスト
+gem 'sorcery' #ログイン管理
 gem 'foundation-icons-sass-rails'
-gem 'seed-fu', '~> 2.3'
+gem 'seed-fu', '~> 2.3' #モデル別のSeedデータ
 gem 'banken'  #管理人Gem
 gem 'fog-aws' #Carrierwave+S3用
 gem 'redcarpet'#Markdown
 gem 'coderay' #シンタックスハイライト
+gem 'meta-tags' #メタタグ
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
