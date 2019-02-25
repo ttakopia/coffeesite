@@ -4,6 +4,7 @@ class ArtsController < ApplicationController
 
   def index
     @tags = Art.tag_counts_on(:tags).order('count DESC')
+    @beans = Art.tag_counts_on(:coffeebeans).order('count DESC')
     if params[:tag]
     @art = Art.tagged_with(params[:tag])
     @arr =  @art.pluck(:address)

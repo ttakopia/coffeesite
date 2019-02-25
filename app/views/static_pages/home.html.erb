@@ -34,37 +34,7 @@
 </div>
 
 <div class="cell medium-3 large-3">
-<% if false %> #コメントアウト
-<h3 class="side-title">Ranking(PV数)</h3> 
-  <% @ranks.each.with_index do |art, i| %>
-
-<h6 class="text-left ranking-number">No.<%= "#{i+1}" %></h6>
-<div class="ranking-block">
-<div class="ranking-image float-left"><%= image_tag art.mimages[0].url %></div>
-<div class="ranking-text">
-  <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y/%m/%d") %></p>
-<%= link_to art_path(art) do %>
-  <h6 class="ranking-title"><%= art.storename %></h6>
-  <% end %>
-  <p class="cat-name cat-CULTURE"><%= art.area %></p>
-<p class="cat-name cat-CULTURE">(<%= REDIS.zscore("arts/", "#{art.id}").floor %>PV)</p>
-   <span id="like-of-<%= art.id %>">
-  <%= render partial: 'favorites/favorite', locals: { art: art, favorites: @favorites } %></span>
-</div>
- </div>
-  <% end %>
-  <% end %>
-
-<div><p class="text-left page-top">Area</p></div>
- <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-            <div class="button small button-color1"><%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
-            <%= tag.count %></div>
-            <% end %>
-<div><p class="text-left page-top">Coffee</p></div>
-<% tag_cloud(@beans, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-            <div class="button small alert"><%= link_to tag.name, tag_path(:action => :tag, :tag => tag.name), :class => css_class %>
-            <%= tag.count %></div>
-            <% end %>
+<%= render 'layouts/side' %>
 </div>
 </div>
 </div>
