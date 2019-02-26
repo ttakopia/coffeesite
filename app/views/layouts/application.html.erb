@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%= render 'layouts/google' %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => false %>
     <%= favicon_link_tag 'coffeeseeker.ico' %>
     <script src="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"></script>
     <%= display_meta_tags(default_meta_tags) %>
+    <%= render 'layouts/google' %>
     <%= csrf_meta_tags %>
   </head>
   <body>

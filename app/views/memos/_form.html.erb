@@ -5,6 +5,8 @@
 <script async src="https://sdk.amazonaws.com/js/aws-sdk-2.355.0.min.js"></script>
 
 <%= form_for @memo do |f| %>
+      <%= f.label :タイトル %>
+      <%= f.text_field :title %>
     <label for="upload-file">
       <input type="file" id="upload-file">
     </label>
