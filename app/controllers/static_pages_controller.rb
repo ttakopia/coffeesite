@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
     @art = Art.tagged_with(params[:tag])
     @art = Art.tagged_with(params[:coffeebean])
   else
-    @art = Art.all
+    @art = Art.all.reverse
   end
   end
 
@@ -24,7 +24,8 @@ class StaticPagesController < ApplicationController
     @memo = Memo.find(1)
   end
 
-  def columns
+  def column
+    @memos = Memo.all
   end
 
   def help

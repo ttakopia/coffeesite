@@ -1,14 +1,18 @@
 <% set_meta_tags title: 'Column', description: 'カフェ・コーヒーのコラムについて'  %>
 </br>
 <div class="cell"><h2 class="maint">Column</h2></div>
-
+ <% @memos.each do |memo| %>
 <div class="media-object">
   <div class="media-object-section">
-  <%= image_tag("three.jpg",:size => "200x200") %>
-  </div>
-  <div class="media-object-section">
-    <h4>インドネシア×COFFEE</h4>
-    <p>インドネシアのコーヒー豆とは？インドネシアの生産国？などを紹介していきます。</p>
+  <div class="thumbnail">
+  <%= image_tag memo.images.url, :size => "200x200" %>
+    </div>
+     </div>
+   <div class="media-object-section">
+    <%= link_to memo_path(memo) do %>
+    <h3><strong><%= memo.title %></strong></h3>
+    <% end %>
+    <p><%= memo.shortcontent %></p>
   </div>
 </div>
-</div>
+  <% end %>

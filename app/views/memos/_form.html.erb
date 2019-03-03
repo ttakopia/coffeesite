@@ -7,6 +7,10 @@
 <%= form_for @memo do |f| %>
       <%= f.label :タイトル %>
       <%= f.text_field :title %>
+      <%= f.label :ショートコンテンツ %>
+      <%= f.text_field :shortcontent %>
+      <%= f.label :写真 %>
+      <%= f.file_field :images %>
     <label for="upload-file">
       <input type="file" id="upload-file">
     </label>

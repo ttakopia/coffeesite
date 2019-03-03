@@ -10,7 +10,7 @@ class ArtsController < ApplicationController
     @arr =  @art.pluck(:address)
     @ars =  @art.pluck(:storename)
   else
-    @art = Art.all
+    @art = Art.all.reverse
   end
   end
 

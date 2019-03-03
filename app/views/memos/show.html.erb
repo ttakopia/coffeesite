@@ -1,14 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% set_meta_tags title: @memo.title, description: @memo.shortcontent %>
 
+<div class="cell"><%= render 'bigimg' %></div>
 <p>
-  <strong>Title:</strong>
-  <%= @memo.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
 	<div class="text-left"><%= markdown(@memo.content) %></div>
 </p>
-
-<%= link_to 'Edit', edit_memo_path(@memo) %> |
-<%= link_to 'Back', memos_path %>

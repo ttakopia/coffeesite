@@ -10,6 +10,16 @@ class MemosController < ApplicationController
   # GET /memos/1
   # GET /memos/1.json
   def show
+    @tags = Art.tag_counts_on(:tags).order('count DESC')
+    @beans = Art.tag_counts_on(:coffeebeans).order('count DESC')
+    @arr = Art.pluck(:address)
+    @ars = Art.pluck(:storename)
+    if params[:tag]
+    @art = Art.tagged_with(params[:tag])
+    @art = Art.tagged_with(params[:coffeebean])
+  else
+    @memos = Memo.all
+  end
   end
 
   # GET /memos/new
@@ -69,6 +79,6 @@ class MemosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def memo_params
-      params.require(:memo).permit(:title, :content)
+      params.require(:memo).permit(:title, :content,:shortcontent,:images)
     end
 end

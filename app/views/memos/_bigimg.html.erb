@@ -1,0 +1,18 @@
+<div class="row expanded collapse">
+  <div class="column">
+    <div class="large-article-header" style="background-image:url(<%= @memo.images.url %>);">
+      <div class="large-article-header-content">
+        <div class="center-container">
+          <div class="article-title">
+            <h1><%= @memo.title %></h1>
+          </div>
+          <div class="article-details">
+          <div style="color:white; position: center;">
+            <p><%= @memo.created_at.strftime("%Y年%m月%d日") %></p>
+      	    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
