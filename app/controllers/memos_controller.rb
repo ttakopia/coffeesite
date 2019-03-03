@@ -1,6 +1,6 @@
 class MemosController < ApplicationController
   before_action :set_memo, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :require_login,only: [:show, :index]
   # GET /memos
   # GET /memos.json
   def index
