@@ -28,9 +28,6 @@
   <p class="cat-name cat-CULTURE"><%= art.area %></p>
   <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y年%m月%d日") %>
   </p>
-  <span id="like-of-<%= art.id %>">
-  <%= render partial: 'favorites/favorite', locals: { art: art, favorites: @favorites } %>
-  </span>
   </div>
   </div>
   </div>

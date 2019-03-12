@@ -5,8 +5,7 @@ class User < ApplicationRecord
     has_many :authentications, :dependent => :destroy
     accepts_nested_attributes_for :authentications
 	has_many :favorites, dependent: :destroy
-	has_many :arts, through: :favorites
-
+	has_many :arts
 	validates :password, length: {minimum: 6}
 	validates :password, confirmation: true
  	validates :password_confirmation, presence: true

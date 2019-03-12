@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   end
   resources :user_sessions
   resources :users
-  resources :arts
 
   root 'static_pages#home'
   get  'about',  to: 'static_pages#about'

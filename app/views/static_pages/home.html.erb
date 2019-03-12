@@ -1,4 +1,3 @@
-
 <div class="grid-x grid-margin-x">
 <div class="cell"><%= render 'bigtitle' %></div>
 <div class="cell small-12 medium-9 large-9">
@@ -18,9 +17,6 @@
   <% end %>
   <p class="cat-name cat-CULTURE"><%= art.area %></p>
   <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y/%m/%d") %></p>
-   <span id="like-of-<%= art.id %>">
-  <%= render partial: 'favorites/favorite', locals: { art: art, favorites: @favorites } %>
-  </span>
   </div>
   </div>
   </div>

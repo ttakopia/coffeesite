@@ -11,8 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
-//= require jquery_ujs
 //= require rails-ujs
 //= require foundation
 //= require underscore
@@ -20,7 +18,6 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-
 //メインスライド
 $(document).ready(function(){
   $('.bxslider').bxSlider({

@@ -15,9 +15,9 @@
 <h2><%= @art.storename %></h2>
 </div>
 
-<span id="like-of-<%= @art.id %>">
-  <%= render partial: 'favorites/favorite', locals: { art: @art, favorites: @favorites } %>
-  </span>
+<div id="likes-button-<%= @art.id %>">
+  <%= render partial: 'favorites/favorite',locals: { art: @art, favorites: @favorites, favorite: @favorite} %>
+</div>
 
 <div>
 <ul class="tabs" data-tabs id="example-tabs">
