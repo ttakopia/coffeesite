@@ -7,21 +7,17 @@
 <h2>New Article</h2>
 </div>
 <div class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-3">
-<% @art.each do |art| %>
-<div class="cell">
-<div class="card">
-  <%= image_tag art.mimages[0].url %>
-  <div class="card-section">
-  <%= link_to art_path(art) do %>
-  <h4><%= art.storename %></h4>
-  <% end %>
-  <p class="cat-name cat-CULTURE"><%= art.area %></p>
-  <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y/%m/%d") %></p>
-  </div>
-  </div>
-  </div>
-  <% end %>
-  </div>
+<%= render 'arts/card' %>
+</div>
+
+<div class="cell small-title">
+<h5 class="readmore clear button secondary top-line">
+<%= link_to 'Read more', memos_path %></h5>
+<h2>New Column</h2>
+</div>
+<div class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-3">
+<%= render 'memos/me' %>
+</div>
 
 <div class="cell small-title">
 <h2>Map</h2>

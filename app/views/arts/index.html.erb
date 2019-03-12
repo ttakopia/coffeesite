@@ -14,25 +14,8 @@
 <div class="grid-x page-top grid-margin-x">
 <div class="cell small-12 medium-9 large-9">
 <div class="grid-x grid-padding-x small-up-2 medium-up-3 large-up-3">
-<% @art.each do |art| %>
-<div class="cell">
-<div class="card">
-  <%= image_tag art.mimages[0].url %>
-  <div class="card-section">
-  <%= link_to art_path(art) do %>
-  <h4><%= art.storename %></h4>
-   <% if false %>
-     (<%= REDIS.zscore("arts/", "#{art.id}").floor %>PV)
-     <% end %>
-  <% end %>
-  <p class="cat-name cat-CULTURE"><%= art.area %></p>
-  <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y年%m月%d日") %>
-  </p>
-  </div>
-  </div>
-  </div>
-  <% end %>
-  </div>
+ <%= render 'card' %>
+</div>
 
 
   <% if request.path.split('/').last.split('.').first == "index" %>
