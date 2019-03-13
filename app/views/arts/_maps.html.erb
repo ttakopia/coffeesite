@@ -4,11 +4,12 @@ $(window).load(function() {
         var map;
         var bounds
         var locationCount;
-        var infoWindow = null;
+        var infoWindow = true;
         // The array of locations to mark on the map.
         // Add as many locations as necessary.
         var locations = <%= @arr.to_json.html_safe %>;
         var names = <%= @ars.to_json.html_safe %>;
+        var urls = <%= @ari.to_json.html_safe %>;
         // Init the map
         function init() {
             // Customize look of the map.
@@ -62,14 +63,16 @@ $(window).load(function() {
                     // The HTML content for the InfoWindow.
                     // Includes a form to allow the user to
                     // get directions.
-                    var windowContent = names[i];
+                    var windowContent = '<a href="https//coffee-seeker.com/arts/' + urls[i] + '">' + names[i] + '</a>'
+                    var windowContents = locations[i]
                     // Create the marker for the location
                     // We use 'html' key to attach the
                     // InfoWindow content to the marker.
                     var marker = new google.maps.Marker({
                         position: results[0].geometry.location,
                         map: map,
-                        html: windowContent
+                        html: '<div class="linktoart">' + '店名：' + windowContent + '</div>' +
+                              '<div>'  + '住所：' + windowContents + '</div>'
                     });
                     // Set event to display the InfoWindow anchored
                     // to the marker when the marker is clicked.
