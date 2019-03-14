@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc><%= @domain %></loc>
+   </url>
+   <url>
+      <loc><%= @domain %>/index</loc>
+   </url>
+  <% @art.each do |art| %>
+    <url>
+      <loc><%= "#{@domain}/arts/#{art.id}" %></loc>
+    </url>
+    <% end %>
+  <% @memo.each do |memo| %>
+    <url>
+      <loc><%= "#{@domain}/memos/#{memo.id}" %></loc>
+    </url>
+   <% end %>
+</urlset>
