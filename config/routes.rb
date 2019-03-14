@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users
 
   root 'static_pages#home'
-  get 'sitemap', to: 'sitemaps#index'
+  get 'sitemap', to: 'sitemaps#index', :defaults => { :format => 'xml' }
   get  'about',  to: 'static_pages#about'
   get  '/help',  to: 'static_pages#help'
   get  'column',  to: 'static_pages#column'
