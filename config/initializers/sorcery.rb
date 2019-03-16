@@ -116,7 +116,6 @@ Rails.application.config.sorcery.configure do |config|
   config.facebook.user_info_mapping = {:email => "email"}
   config.facebook.access_permissions = ["email"]
   config.facebook.display = "page"
-  config.facebook.api_version = "v2.3"
   # config.facebook.parse = :json
   #
   # config.github.key = ""

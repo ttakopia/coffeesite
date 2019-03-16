@@ -3,7 +3,6 @@ class Art < ApplicationRecord
   has_many :beans
   has_many :brews
   has_many :elsecoffees
-  belongs_to :user
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
   accepts_nested_attributes_for :menus, :brews, :elsecoffees, :beans, allow_destroy: true

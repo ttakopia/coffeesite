@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :user_sessions
   resources :users
+  resources :arts
 
   root 'static_pages#home'
   resources :sitemaps, :only => :index
