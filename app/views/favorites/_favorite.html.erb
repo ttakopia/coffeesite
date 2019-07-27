@@ -1,22 +1,9 @@
-<% if current_user %>
-  <% unless art.like_user(current_user.id).blank? %>
-  <%= button_to art_favorite_path(art_id: art.id, id: art.favorites[0].id), method: :delete, id: "likes-button-#{art.id}", remote: true do %>
-     <i class="fi-heart"  style="color: red;"></i>
-      <span>
-        <%= art.favorites_count %>
-      </span>
-    <% end %>
-  <% else %>
-  <%= button_to art_favorites_path(art), method: :post, id: "likes-button-#{art.id}", remote: true do %>
-      <i class="fi-heart"></i>
-      <span>
-        <%= art.favorites_count %>
-      </span>
-    <% end %>
-  <% end %>
+<% if current_user && @art.like_user(current_user.id) %>
+<%= link_to art_favorite_path(@art.like_user(current_user.id), art_id: @art.id), method: :delete, remote: true do %>
+<i class="fi-heart"  style="color: red;"></i>
+      <% end %>
 <% else %>
-  <i class="fi-heart"></i>
-  <span>
-    <%= art.favorites_count %>
-  </span>
+<%= link_to art_favorites_path(@art), method: :post, remote: true do %>
+        <i class="fi-heart"></i>
+<% end %>
 <% end %>

@@ -2,6 +2,25 @@ class StaticPagesController < ApplicationController
 	 # before_action :set_ranking_data
    skip_before_action :require_login
 
+  def create
+    @product = Product.new(product_params)
+    respond_to do |format|
+      if @@prodcut.save
+        format.js #create.js.erbをredeer
+      else
+        format.js { head :no_content } #エラーの時は返さない
+      end
+    end
+  end
+
+  def new
+    respond_to do |format|
+      format.json {
+        render json: {shape: shape}, status: 200
+      }
+    end
+  end
+
   def home
   	@tags = Art.tag_counts_on(:tags).order('count DESC')
     @beans = Art.tag_counts_on(:coffeebeans).order('count DESC')
@@ -30,5 +49,11 @@ class StaticPagesController < ApplicationController
   end
 
   def help
+  end
+
+  private
+
+  def shape
+    ['✊', '✌️', '✋'].sample
   end
 end

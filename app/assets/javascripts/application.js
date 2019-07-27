@@ -15,11 +15,14 @@
 //= require foundation
 //= require underscore
 //= require cocoon
+//= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(document).on('turbolinks:load', function(){
+ $(document).foundation(); 
+});
 //メインスライド
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $('.bxslider').bxSlider({
   pagerCustom: '#bx-pager',//ページャーをカスタマイズする（サムネイルにする）ための記述
   controls:false//前後の矢印を消すための記述
@@ -27,7 +30,7 @@ $(document).ready(function(){
 });
 
 //サムネイルをスライドさせるための記述
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $('.bxslider02').bxSlider({
   pager:false,
   minSlides: 6,//１スライドに表示するサムネイルの数
@@ -35,4 +38,16 @@ $(document).ready(function(){
   slideWidth: 180,//サムネイルの横幅（単位はpx）
   slideMargin: 10//サムネイル間の余白（単位はpx）
       });
+});
+
+$(document).on('turbolinks:load', function(){
+  $('#ajax-btn').on('ajax:success', function(event) {
+    data = event.detail[0];
+    console.log(data);
+    $('#shape').text(data['shape']);
+  });
+
+  $('#ajax-btn').on('ajax:error', function(event) {
+    alert("失敗！");
+  });
 });

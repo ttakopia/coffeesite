@@ -5,6 +5,7 @@ class Art < ApplicationRecord
   has_many :elsecoffees
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
+
   accepts_nested_attributes_for :menus, :brews, :elsecoffees, :beans, allow_destroy: true
 	mount_uploaders :mimages, ImageUploader
   serialize :mimages

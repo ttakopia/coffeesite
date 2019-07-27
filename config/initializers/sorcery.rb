@@ -111,7 +111,7 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.facebook.key = ENV["FACEBOOK_KEY"]
   config.facebook.secret = ENV["FACEBOOK_SECRET"]
-  config.facebook.callback_url = "https://localhost:3000/oauth/callback"
+  config.facebook.callback_url = "https://localhost:3000/oauth/callback?provider=facebook"
   config.facebook.user_info_path = "me?fields=email"
   config.facebook.user_info_mapping = {:email => "email"}
   config.facebook.access_permissions = ["email"]
@@ -234,7 +234,7 @@ Rails.application.config.sorcery.configure do |config|
     # how many times to apply encryption to the password.
     # Default: 1 in test env, `nil` otherwise
     #
-    user.stretches = 1 if Rails.env.test?
+    # user.stretches = 1 if Rails.env.test?
 
     # encryption key used to encrypt reversible encryptions such as AES256.
     # WARNING: If used for users' passwords, changing this key will leave passwords undecryptable!
