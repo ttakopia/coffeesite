@@ -11,7 +11,6 @@
   <div class="card-section">
   <%= link_to art_path(art) do %>
   <h4><%= art.storename %></h4>
-  (<%= REDIS.zscore("arts/", "#{art.id}").floor %>PV)
   <% end %>
   <p class="cat-name cat-CULTURE"><%= art.area %></p>
   <p class="cat-name cat-CULTURE"><%= art.created_at.strftime("%Y年%m月%d日") %>
