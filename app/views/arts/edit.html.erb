@@ -3,3 +3,7 @@
 <div class="cell">
   <%= render 'form' %>
  </div>
+   <% if current_user && current_user.admin? %>
+     <%= link_to "削除する", art_path(@art), method: :delete %>
+     <% else %>
+     <% end %>
