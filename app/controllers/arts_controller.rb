@@ -9,6 +9,7 @@ class ArtsController < ApplicationController
     @art = Art.tagged_with(params[:tag])
     @arr =  @art.pluck(:address)
     @ars =  @art.pluck(:storename)
+    @ari = Art.pluck(:id)
   else
     @art = Art.all.reverse
   end

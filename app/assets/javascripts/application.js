@@ -39,15 +39,3 @@ $(document).on('turbolinks:load', function(){
   slideMargin: 10//サムネイル間の余白（単位はpx）
       });
 });
-
-$(document).on('turbolinks:load', function(){
-  $('#ajax-btn').on('ajax:success', function(event) {
-    data = event.detail[0];
-    console.log(data);
-    $('#shape').text(data['shape']);
-  });
-
-  $('#ajax-btn').on('ajax:error', function(event) {
-    alert("失敗！");
-  });
-});
