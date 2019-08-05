@@ -1,8 +1,7 @@
 <div id="map"></div>
 <script>
-$(document).ready(function(){
         var map;
-        var bounds;
+        var bounds
         var locationCount;
         var infoWindow = true;
         // The array of locations to mark on the map.
@@ -99,8 +98,6 @@ $(document).ready(function(){
                 map.fitBounds(bounds);
             }
         } // END extendBounds()
-        init();
-    }); // END $(window).load
 </script>
 
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&callback=init"></script>
