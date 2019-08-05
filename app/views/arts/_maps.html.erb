@@ -99,5 +99,13 @@
             }
         } // END extendBounds()
 </script>
-
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&callback=init"></script>
+<script>
+  if(window.google){
+  init();
+} else{
+  $.ajax('https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&callback=init', {
+    crossDomain: true,
+    dataType: 'script'
+  });
+}
+</script>

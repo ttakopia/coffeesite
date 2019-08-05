@@ -37,4 +37,13 @@ function getLatLng() {
   });
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&callback=getLatLng"></script>
+<script>
+  if(window.google){
+  initMap();
+} else{
+  $.ajax('https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&callback=getLatLng', {
+    crossDomain: true,
+    dataType: 'script'
+  });
+}
+</script>
