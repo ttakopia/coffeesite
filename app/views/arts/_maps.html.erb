@@ -13,6 +13,7 @@
         function init() {
             // Customize look of the map.
             // https://www.mapbuildr.com/
+             console.log("init");
            var mapOptions = {
                 zoom: 14,
                 zoomControl: true,
@@ -98,13 +99,15 @@
                 map.fitBounds(bounds);
             }
         } // END extendBounds()
+        console.log("Hellon");
 </script>
 <script>
   if(window.google){
   init();
 } else{
-  $.ajax('https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&callback=init', {
+ $.ajax("https://maps.googleapis.com/maps/api/js?key=AIzaSyD7w2r5cHPJkVvi9-pIjGokhX14nJwIKVA&callback=init", {
     crossDomain: true,
+    async: true,
     dataType: 'script'
   });
 }
